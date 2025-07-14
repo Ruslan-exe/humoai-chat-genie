@@ -35,7 +35,7 @@ const Chat = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [apiKey, setApiKey] = useState('');
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [companyContext] = useState(`
+  const [companyContext, setCompanyContext] = useState(`
     Компания: HumoAI
     Описание: Компания разрабатывает ИИ-специалистов чат поддержки для бизнеса в Узбекистане
     Услуги: 
@@ -75,6 +75,31 @@ const Chat = () => {
     }
   }, []);
 
+  // Загружаем данные компании из формы найма
+  useEffect(() => {
+    const savedCompanyData = localStorage.getItem('companyData');
+    if (savedCompanyData) {
+      try {
+        const companyData = JSON.parse(savedCompanyData);
+        const customContext = `
+          Информация о компании: ${companyData.companyInfo}
+          ${companyData.website ? `Веб-сайт: ${companyData.website}` : ''}
+          ${companyData.file ? `Загруженный файл: ${companyData.file.name}` : ''}
+          
+          Дополнительные услуги HumoAI:
+          - Создание персональных ИИ-специалистов за 1 минуту
+          - 24/7 поддержка клиентов
+          - Интеграция с существующими системами
+          - Многоязычная поддержка (русский, узбекский, английский)
+          - Аналитика и отчетность
+        `;
+        setCompanyContext(customContext);
+      } catch (error) {
+        console.error('Error parsing company data:', error);
+      }
+    }
+  }, []);
+
   const generateAIResponse = async (userMessage: string) => {
     if (!apiKey) {
       toast({
@@ -93,10 +118,10 @@ const Chat = () => {
 
     try {
       const systemPrompt = language === 'ru'
-        ? `Ты профессиональный менеджер по поддержке клиентов компании HumoAI. Отвечай дружелюбно, профессионально и по существу. Используй информацию о компании: ${companyContext}. Отвечай только на русском языке.`
+        ? `Ты профессиональный ИИ-специалист службы поддержки клиентов. Отвечай дружелюбно, профессионально и по существу на основе информации о компании. Используй следующую информацию: ${companyContext}. Отвечай только на русском языке. Если клиент спрашивает о чем-то не связанном с компанией, вежливо перенаправь разговор на услуги компании.`
         : language === 'uz'
-        ? `Siz HumoAI kompaniyasining professional mijozlarni qo'llab-quvvatlash bo'yicha menejerisiz. Do'stona, professional va aniq javob bering. Kompaniya haqidagi ma'lumotlardan foydalaning: ${companyContext}. Faqat o'zbek tilida javob bering.`
-        : `You are a professional customer support manager for HumoAI company. Respond in a friendly, professional and relevant manner. Use company information: ${companyContext}. Respond only in English.`;
+        ? `Siz professional mijozlarni qo'llab-quvvatlash bo'yicha AI mutaxassisiz. Do'stona, professional va aniq javob bering. Quyidagi kompaniya ma'lumotlaridan foydalaning: ${companyContext}. Faqat o'zbek tilida javob bering. Agar mijoz kompaniya bilan bog'liq bo'lmagan narsa haqida so'rasa, muloyimlik bilan suhbatni kompaniya xizmatlariga yo'naltiring.`
+        : `You are a professional AI customer support specialist. Respond in a friendly, professional and relevant manner based on company information. Use the following information: ${companyContext}. Respond only in English. If the customer asks about something not related to the company, politely redirect the conversation to the company's services.`;
 
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
