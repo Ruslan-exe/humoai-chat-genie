@@ -62,11 +62,24 @@ const Chat = () => {
     scrollToBottom();
   }, [messages]);
 
+  // Устанавливаем API ключ из localStorage или используем предоставленный
+  useEffect(() => {
+    const savedApiKey = localStorage.getItem('chatgpt_api_key');
+    if (savedApiKey) {
+      setApiKey(savedApiKey);
+    } else {
+      // Используем предоставленный API ключ
+      const providedKey = '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';
+      setApiKey(providedKey);
+      localStorage.setItem('chatgpt_api_key', providedKey);
+    }
+  }, []);
+
   const generateAIResponse = async (userMessage: string) => {
     if (!apiKey) {
       toast({
         title: "Необходим API ключ",
-        description: "Пожалуйста, добавьте ваш Perplexity API ключ в настройках для работы ИИ-специалиста",
+        description: "Пожалуйста, добавьте ваш ChatGPT API ключ в настройках для работы ИИ-специалиста",
         variant: "destructive",
       });
       
@@ -85,14 +98,14 @@ const Chat = () => {
         ? `Siz HumoAI kompaniyasining professional mijozlarni qo'llab-quvvatlash bo'yicha menejerisiz. Do'stona, professional va aniq javob bering. Kompaniya haqidagi ma'lumotlardan foydalaning: ${companyContext}. Faqat o'zbek tilida javob bering.`
         : `You are a professional customer support manager for HumoAI company. Respond in a friendly, professional and relevant manner. Use company information: ${companyContext}. Respond only in English.`;
 
-      const response = await fetch('https://api.perplexity.ai/chat/completions', {
+      const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${apiKey}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'llama-3.1-sonar-small-128k-online',
+          model: 'gpt-4o-mini',
           messages: [
             {
               role: 'system',
@@ -103,24 +116,19 @@ const Chat = () => {
               content: userMessage
             }
           ],
-          temperature: 0.3,
-          top_p: 0.9,
+          temperature: 0.7,
           max_tokens: 500,
-          return_images: false,
-          return_related_questions: false,
-          frequency_penalty: 1,
-          presence_penalty: 0
         }),
       });
 
       if (!response.ok) {
-        throw new Error('API request failed');
+        throw new Error(`API request failed: ${response.status}`);
       }
 
       const data = await response.json();
       return data.choices[0]?.message?.content || 'Извините, не удалось получить ответ. Попробуйте еще раз.';
     } catch (error) {
-      console.error('Error calling Perplexity API:', error);
+      console.error('Error calling ChatGPT API:', error);
       toast({
         title: "Ошибка API",
         description: "Не удалось получить ответ от ИИ-специалиста. Проверьте API ключ.",
@@ -204,20 +212,27 @@ const Chat = () => {
                   </DialogHeader>
                   <div className="space-y-4">
                     <div>
-                      <Label htmlFor="apiKey">Perplexity API Key</Label>
+                      <Label htmlFor="apiKey">ChatGPT API Key</Label>
                       <Input
                         id="apiKey"
                         type="password"
-                        placeholder="pplx-..."
+                        placeholder="sk-proj-..."
                         value={apiKey}
                         onChange={(e) => setApiKey(e.target.value)}
                       />
                       <p className="text-xs text-muted-foreground mt-2">
-                        Получите ключ на <a href="https://www.perplexity.ai/settings/api" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">perplexity.ai</a>
+                        Получите ключ на <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">platform.openai.com</a>
                       </p>
                     </div>
                     <Button 
-                      onClick={() => setIsSettingsOpen(false)}
+                      onClick={() => {
+                        localStorage.setItem('chatgpt_api_key', apiKey);
+                        setIsSettingsOpen(false);
+                        toast({
+                          title: "Настройки сохранены",
+                          description: "API ключ успешно сохранен",
+                        });
+                      }}
                       className="w-full"
                     >
                       Сохранить
