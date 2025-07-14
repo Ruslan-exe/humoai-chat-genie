@@ -20,12 +20,12 @@ export const HeroSection = () => {
           {/* Text Content */}
           <div className="space-y-8 animate-slide-up">
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-white drop-shadow-lg">
+                <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                   {t('hero.title')}
                 </span>
                 <br />
-                <span className="text-white drop-shadow-lg">
+                <span className="text-white">
                   {t('hero.subtitle')}
                 </span>
               </h1>
@@ -39,24 +39,24 @@ export const HeroSection = () => {
             <div className="flex flex-wrap gap-8">
               <div className="text-center">
                 <div className="flex items-center gap-2 mb-1">
-                  <TrendingUp className="w-5 h-5 text-primary" />
-                  <div className="text-3xl font-bold text-primary">x2</div>
+                  <TrendingUp className="w-5 h-5 text-blue-400" />
+                  <div className="text-3xl font-bold text-white">x2</div>
                 </div>
                 <div className="text-sm text-white/80">{t('stats.conversion')}</div>
               </div>
               
               <div className="text-center">
                 <div className="flex items-center gap-2 mb-1">
-                  <Zap className="w-5 h-5 text-accent" />
-                  <div className="text-3xl font-bold text-accent">70%</div>
+                  <Zap className="w-5 h-5 text-purple-400" />
+                  <div className="text-3xl font-bold text-white">70%</div>
                 </div>
                 <div className="text-sm text-white/80">{t('stats.economy')}</div>
               </div>
               
               <div className="text-center">
                 <div className="flex items-center gap-2 mb-1">
-                  <Clock className="w-5 h-5 text-primary" />
-                  <div className="text-3xl font-bold text-primary">30с</div>
+                  <Clock className="w-5 h-5 text-blue-400" />
+                  <div className="text-3xl font-bold text-white">30с</div>
                 </div>
                 <div className="text-sm text-white/80">{t('stats.speed')}</div>
               </div>

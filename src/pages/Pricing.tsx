@@ -12,53 +12,54 @@ const Pricing = () => {
 
   const plans = [
     {
-      name: t('pricing.starter.name') || 'Стартер',
-      price: '299',
-      period: t('pricing.period') || '/мес',
-      description: t('pricing.starter.desc') || 'Идеально для малого бизнеса',
+      name: 'Lite',
+      price: '100',
+      period: '/мес',
+      description: 'Базовый пакет для начинающих',
       icon: Zap,
       popular: false,
       features: [
-        t('pricing.starter.feature1') || 'До 1,000 сообщений в месяц',
-        t('pricing.starter.feature2') || '1 ИИ-специалист',
-        t('pricing.starter.feature3') || 'Базовые интеграции',
-        t('pricing.starter.feature4') || 'Email поддержка',
-        t('pricing.starter.feature5') || 'Аналитика базовая'
+        'До 1,000 сообщений в месяц',
+        '1 ИИ-специалист',
+        'Базовые интеграции',
+        'Email поддержка',
+        'Базовая аналитика'
       ]
     },
     {
-      name: t('pricing.business.name') || 'Бизнес',
-      price: '899',
-      period: t('pricing.period') || '/мес',
-      description: t('pricing.business.desc') || 'Для растущих компаний',
+      name: 'Basic',
+      price: '199',
+      originalPrice: '299',
+      period: '/мес',
+      description: 'Популярный выбор с скидкой',
       icon: Star,
       popular: true,
       features: [
-        t('pricing.business.feature1') || 'До 10,000 сообщений в месяц',
-        t('pricing.business.feature2') || '5 ИИ-специалистов',
-        t('pricing.business.feature3') || 'Все интеграции',
-        t('pricing.business.feature4') || 'Приоритетная поддержка',
-        t('pricing.business.feature5') || 'Продвинутая аналитика',
-        t('pricing.business.feature6') || 'Кастомизация интерфейса',
-        t('pricing.business.feature7') || 'API доступ'
+        'До 10,000 сообщений в месяц',
+        '5 ИИ-специалистов',
+        'Все интеграции',
+        'Приоритетная поддержка',
+        'Продвинутая аналитика',
+        'Кастомизация интерфейса',
+        'API доступ'
       ]
     },
     {
-      name: t('pricing.enterprise.name') || 'Корпоративный',
-      price: t('pricing.enterprise.price') || 'По запросу',
+      name: 'Individual',
+      price: 'По запросу',
       period: '',
-      description: t('pricing.enterprise.desc') || 'Для крупных предприятий',
+      description: 'Индивидуальные решения',
       icon: Crown,
       popular: false,
       features: [
-        t('pricing.enterprise.feature1') || 'Неограниченные сообщения',
-        t('pricing.enterprise.feature2') || 'Неограниченное количество ИИ',
-        t('pricing.enterprise.feature3') || 'Персональные интеграции',
-        t('pricing.enterprise.feature4') || 'Выделенный менеджер',
-        t('pricing.enterprise.feature5') || 'Корпоративная аналитика',
-        t('pricing.enterprise.feature6') || 'Белый лейбл',
-        t('pricing.enterprise.feature7') || 'SLA 99.9%',
-        t('pricing.enterprise.feature8') || 'Обучение команды'
+        'Неограниченные сообщения',
+        'Неограниченное количество ИИ',
+        'Персональные интеграции',
+        'Выделенный менеджер',
+        'Корпоративная аналитика',
+        'Белый лейбл',
+        'SLA 99.9%',
+        'Обучение команды'
       ]
     }
   ];
@@ -131,8 +132,15 @@ const Pricing = () => {
                   <p className="text-muted-foreground mb-4">{plan.description}</p>
                   
                   <div className="mb-4">
-                    <span className="text-4xl font-bold text-foreground">${plan.price}</span>
-                    <span className="text-muted-foreground">{plan.period}</span>
+                    {plan.originalPrice && (
+                      <div className="text-sm text-muted-foreground line-through mb-1">
+                        ${plan.originalPrice}{plan.period}
+                      </div>
+                    )}
+                    <div>
+                      <span className="text-4xl font-bold text-foreground">${plan.price}</span>
+                      <span className="text-muted-foreground">{plan.period}</span>
+                    </div>
                   </div>
                 </CardHeader>
                 

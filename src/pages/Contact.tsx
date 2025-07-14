@@ -67,13 +67,13 @@ const Contact = () => {
     {
       icon: Phone,
       title: t('contact.phone') || 'Телефон',
-      value: '+7 (495) 123-45-67',
+      value: '+998917982104',
       description: t('contact.phone.desc') || 'Звоните в рабочее время'
     },
     {
       icon: Mail,
       title: t('contact.email') || 'Email',
-      value: 'info@humoai.com',
+      value: 'isanbaevruslan04@gmail.com',
       description: t('contact.email.desc') || 'Ответим в течение 24 часов'
     },
     {
@@ -83,10 +83,10 @@ const Contact = () => {
       description: t('contact.address.desc') || 'Центральный офис'
     },
     {
-      icon: Clock,
-      title: t('contact.hours') || 'Часы работы',
-      value: 'Пн-Пт: 9:00-18:00',
-      description: t('contact.hours.desc') || 'МСК, выходные - по договоренности'
+      icon: MessageSquare,
+      title: 'Telegram',
+      value: '@MEDSOFT1',
+      description: 'Быстрые ответы в мессенджере'
     }
   ];
 
