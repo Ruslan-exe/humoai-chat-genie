@@ -25,12 +25,12 @@ export const HeroSection = () => {
                   {t('hero.title')}
                 </span>
                 <br />
-                <span className="text-foreground">
+                <span className="text-white drop-shadow-lg">
                   {t('hero.subtitle')}
                 </span>
               </h1>
               
-              <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+              <p className="text-xl text-white/90 max-w-2xl leading-relaxed drop-shadow-md">
                 {t('hero.description')}
               </p>
             </div>
@@ -42,7 +42,7 @@ export const HeroSection = () => {
                   <TrendingUp className="w-5 h-5 text-primary" />
                   <div className="text-3xl font-bold text-primary">x2</div>
                 </div>
-                <div className="text-sm text-muted-foreground">{t('stats.conversion')}</div>
+                <div className="text-sm text-white/80">{t('stats.conversion')}</div>
               </div>
               
               <div className="text-center">
@@ -50,7 +50,7 @@ export const HeroSection = () => {
                   <Zap className="w-5 h-5 text-accent" />
                   <div className="text-3xl font-bold text-accent">70%</div>
                 </div>
-                <div className="text-sm text-muted-foreground">{t('stats.economy')}</div>
+                <div className="text-sm text-white/80">{t('stats.economy')}</div>
               </div>
               
               <div className="text-center">
@@ -58,7 +58,7 @@ export const HeroSection = () => {
                   <Clock className="w-5 h-5 text-primary" />
                   <div className="text-3xl font-bold text-primary">30с</div>
                 </div>
-                <div className="text-sm text-muted-foreground">{t('stats.speed')}</div>
+                <div className="text-sm text-white/80">{t('stats.speed')}</div>
               </div>
             </div>
 
@@ -85,7 +85,7 @@ export const HeroSection = () => {
             </div>
 
             {/* Users count */}
-            <div className="flex items-center gap-2 text-muted-foreground">
+            <div className="flex items-center gap-2 text-white/70">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
                   <div
@@ -97,7 +97,7 @@ export const HeroSection = () => {
                 ))}
               </div>
               <span className="text-sm">
-                <span className="font-semibold text-foreground">600+</span> {t('stats.users')}
+                <span className="font-semibold text-white">600+</span> {t('stats.users')}
               </span>
             </div>
           </div>

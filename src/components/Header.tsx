@@ -12,10 +12,10 @@ export const Header = () => {
 
   const menuItems = [
     { key: 'nav.home', href: '/' },
-    { key: 'nav.about', href: '#about' },
-    { key: 'nav.services', href: '#services' },
-    { key: 'nav.pricing', href: '#pricing' },
-    { key: 'nav.contact', href: '#contact' },
+    { key: 'nav.about', href: '/about' },
+    { key: 'nav.services', href: '/services' },
+    { key: 'nav.pricing', href: '/pricing' },
+    { key: 'nav.contact', href: '/contact' },
   ];
 
   return (
@@ -41,7 +41,7 @@ export const Header = () => {
               <a
                 key={item.key}
                 href={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="text-foreground/80 hover:text-white transition-colors duration-200 font-medium"
               >
                 {t(item.key)}
               </a>
@@ -81,7 +81,7 @@ export const Header = () => {
                 <a
                   key={item.key}
                   href={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  className="text-foreground/80 hover:text-white transition-colors duration-200 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t(item.key)}
