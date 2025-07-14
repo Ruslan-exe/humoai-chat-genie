@@ -75,7 +75,7 @@ export const HireForm = () => {
               </div>
             </div>
             
-            <Button variant="hero" size="xl" className="w-full">
+            <Button variant="hero" size="xl" className="w-full" onClick={() => window.location.href = '/chat'}>
               Начать использовать
             </Button>
           </CardContent>
