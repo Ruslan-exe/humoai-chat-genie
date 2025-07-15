@@ -66,51 +66,51 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: 'Телефон',
+      title: t('contact.phone'),
       value: '+998917982104',
-      description: 'Ответим в течение 1 минуты'
+      description: t('contact.phone_desc')
     },
     {
       icon: Mail,
-      title: 'Email',
+      title: t('contact.email'),
       value: 'isanbaevruslan04@gmail.com',
-      description: 'Ответим в течение 1 часа'
+      description: t('contact.email_desc')
     },
     {
       icon: MapPin,
-      title: 'Офис',
-      value: 'Ташкент, Узбекистан',
-      description: 'Центр Азии'
+      title: t('contact.office'),
+      value: t('contact.office_location'),
+      description: t('contact.office_desc')
     },
     {
       icon: MessageSquare,
       title: 'Telegram',
       value: '@MEDSOFT1',
-      description: 'Быстрые ответы в мессенджере'
+      description: t('contact.telegram_desc')
     }
   ];
 
   const supportOptions = [
     {
       icon: MessageSquare,
-      title: 'Онлайн чат',
-      description: 'Мгновенные ответы на ваши вопросы через чат на сайте или Telegram',
-      action: 'Начать чат',
-      details: 'Среднее время ответа: 2 минуты'
+      title: t('contact.support.chat'),
+      description: t('contact.support.chat_desc'),
+      action: t('contact.support.chat_action'),
+      details: t('contact.support.chat_details')
     },
     {
       icon: Headphones,
-      title: 'Телефонная поддержка',
-      description: 'Персональная консультация с экспертом по телефону или видеозвонку',
-      action: 'Заказать звонок',
-      details: 'Бесплатные консультации до 30 минут'
+      title: t('contact.support.call'),
+      description: t('contact.support.call_desc'),
+      action: t('contact.support.call_action'),
+      details: t('contact.support.call_details')
     },
     {
       icon: Clock,
-      title: 'Техническая поддержка',
-      description: 'Помощь в настройке, интеграции и решении технических вопросов',
-      action: 'Создать тикет',
-      details: 'Приоритетная поддержка 24/7'
+      title: t('contact.support.technical'),
+      description: t('contact.support.technical_desc'),
+      action: t('contact.support.technical_action'),
+      details: t('contact.support.technical_details')
     }
   ];
 
@@ -125,27 +125,27 @@ const Contact = () => {
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Контакты
+                {t('contact.title')}
               </span>
             </h1>
             <p className="text-xl text-white/90 leading-relaxed mb-8">
-              Свяжитесь с нами любым удобным способом. Наши эксперты готовы обсудить ваш проект, ответить на вопросы и помочь выбрать оптимальное ИИ-решение для вашего бизнеса.
+              {t('contact.subtitle')}
             </p>
             <div className="grid md:grid-cols-3 gap-4 text-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                 <Clock className="w-8 h-8 text-white mx-auto mb-2" />
-                <div className="text-white font-semibold">Быстрый ответ</div>
-                <div className="text-white/80 text-sm">В течение 2 часов</div>
+                <div className="text-white font-semibold">{t('contact.quick_response')}</div>
+                <div className="text-white/80 text-sm">{t('contact.quick_response_time')}</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                 <Headphones className="w-8 h-8 text-white mx-auto mb-2" />
-                <div className="text-white font-semibold">24/7 Поддержка</div>
-                <div className="text-white/80 text-sm">Круглосуточно</div>
+                <div className="text-white font-semibold">{t('contact.support_24_7')}</div>
+                <div className="text-white/80 text-sm">{t('contact.round_clock')}</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                 <MessageSquare className="w-8 h-8 text-white mx-auto mb-2" />
-                <div className="text-white font-semibold">Бесплатная консультация</div>
-                <div className="text-white/80 text-sm">30 минут с экспертом</div>
+                <div className="text-white font-semibold">{t('contact.free_consultation')}</div>
+                <div className="text-white/80 text-sm">{t('contact.consultation_duration')}</div>
               </div>
             </div>
           </div>
@@ -170,172 +170,65 @@ const Contact = () => {
             ))}
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <Card className="shadow-glow">
-              <CardHeader>
-                <CardTitle className="text-2xl">
-                  Напишите нам
-                </CardTitle>
-                <p className="text-muted-foreground">
-                  Заполните форму и мы свяжемся с вами в ближайшее время
-                </p>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-sm font-medium text-foreground mb-2 block">
-                        {t('contact.form.name') || 'Имя'} *
-                      </label>
-                      <Input
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder={t('contact.form.name.placeholder') || 'Ваше имя'}
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-foreground mb-2 block">
-                        {t('contact.form.email') || 'Email'} *
-                      </label>
-                      <Input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder={t('contact.form.email.placeholder') || 'your@email.com'}
-                        required
-                      />
-                    </div>
-                  </div>
+          {/* Support Options */}
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-3xl font-bold mb-6 text-foreground">
+                {t('contact.support.title')}
+              </h2>
+              <p className="text-muted-foreground mb-8">
+                {t('contact.support.subtitle')}
+              </p>
+            </div>
 
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-sm font-medium text-foreground mb-2 block">
-                        {t('contact.form.phone') || 'Телефон'}
-                      </label>
-                      <Input
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder={t('contact.form.phone.placeholder') || '+7 (___) ___-__-__'}
-                      />
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-foreground mb-2 block">
-                        {t('contact.form.company') || 'Компания'}
-                      </label>
-                      <Input
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        placeholder={t('contact.form.company.placeholder') || 'Название компании'}
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="text-sm font-medium text-foreground mb-2 block">
-                      {t('contact.form.message') || 'Сообщение'} *
-                    </label>
-                    <Textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder={t('contact.form.message.placeholder') || 'Расскажите о вашем проекте...'}
-                      rows={6}
-                      required
-                    />
-                  </div>
-
-                  <Button type="submit" variant="hero" size="lg" className="w-full group">
-                    <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-                    {t('contact.form.send') || 'Отправить сообщение'}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-
-            {/* Support Options */}
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl font-bold mb-6 text-foreground">
-                  Поддержка
-                </h2>
-                <p className="text-muted-foreground mb-8">
-                  Выберите удобный способ получения помощи
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                {supportOptions.map((option, index) => (
-                  <Card key={index} className="hover:shadow-glow transition-all duration-300">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                          <option.icon className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-semibold mb-2 text-foreground">{option.title}</h3>
-                          <p className="text-muted-foreground mb-2">{option.description}</p>
-                          <p className="text-sm text-primary mb-4">{option.details}</p>
-                          <Button variant="outline" size="sm">
-                            {option.action}
-                          </Button>
-                        </div>
+            <div className="space-y-6">
+              {supportOptions.map((option, index) => (
+                <Card key={index} className="hover:shadow-glow transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                        <option.icon className="w-6 h-6 text-white" />
                       </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-
-              {/* Contact Hours */}
-              <Card className="bg-gradient-card">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-foreground">Часы работы</h3>
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Понедельник - Пятница</span>
-                      <span className="font-medium">9:00 - 18:00</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Суббота</span>
-                      <span className="font-medium">10:00 - 16:00</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Воскресенье</span>
-                      <span className="font-medium">Выходной</span>
-                    </div>
-                    <div className="border-t pt-3 mt-3">
-                      <div className="flex justify-between">
-                        <span className="text-primary font-medium">Экстренная поддержка</span>
-                        <span className="text-primary font-medium">24/7</span>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-semibold mb-2 text-foreground">{option.title}</h3>
+                        <p className="text-muted-foreground mb-2">{option.description}</p>
+                        <p className="text-sm text-primary mb-4">{option.details}</p>
+                        <Button variant="outline" size="sm">
+                          {option.action}
+                        </Button>
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
 
-              {/* Map placeholder */}
-              <Card className="overflow-hidden">
-                <div className="h-64 bg-gradient-primary/10 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold text-foreground mb-2">
-                      Наш офис
-                    </h3>
-                    <p className="text-muted-foreground mb-2">
-                      Ташкент, Узбекистан
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      В центре технологического района
-                    </p>
+            {/* Contact Hours */}
+            <Card className="bg-gradient-card">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-foreground">{t('contact.hours.title')}</h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">{t('contact.hours.weekdays')}</span>
+                    <span className="font-medium">9:00 - 18:00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">{t('contact.hours.saturday')}</span>
+                    <span className="font-medium">10:00 - 16:00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">{t('contact.hours.sunday')}</span>
+                    <span className="font-medium">{t('contact.hours.closed')}</span>
+                  </div>
+                  <div className="border-t pt-3 mt-3">
+                    <div className="flex justify-between">
+                      <span className="text-primary font-medium">{t('contact.hours.emergency')}</span>
+                      <span className="text-primary font-medium">24/7</span>
+                    </div>
                   </div>
                 </div>
-              </Card>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

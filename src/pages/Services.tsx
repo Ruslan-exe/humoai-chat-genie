@@ -129,7 +129,7 @@ const Services = () => {
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Найдем для вас ИИ-сотрудника
+                {t('services.title')}
               </span>
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
@@ -218,10 +218,10 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-foreground">
-              Преимущества наших решений
+              {t('services.benefits.title')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Почему клиенты выбирают HumoAI
+              {t('services.benefits.subtitle')}
             </p>
           </div>
           
@@ -244,10 +244,10 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold mb-6 text-foreground">
-              Готовы начать?
+              {t('services.cta.title')}
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Получите персонального ИИ-специалиста для вашего бизнеса уже сегодня
+              {t('services.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -256,7 +256,7 @@ const Services = () => {
                 onClick={() => navigate('/hire')}
                 className="group"
               >
-                Нанять ИИ-специалиста
+                {t('services.cta.hire')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
@@ -264,7 +264,7 @@ const Services = () => {
                 size="xl"
                 onClick={() => navigate('/chat')}
               >
-                Попробовать демо
+                {t('services.cta.demo')}
               </Button>
             </div>
           </div>

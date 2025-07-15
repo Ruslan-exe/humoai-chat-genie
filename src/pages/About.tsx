@@ -57,7 +57,7 @@ const About = () => {
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Наша компания
+                {t('about.title')}
               </span>
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
@@ -73,7 +73,7 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold mb-6 text-foreground">
-                Миссия
+                {t('about.mission')}
               </h2>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
                 Наша миссия — демократизировать доступ к искусственному интеллекту для малого и среднего бизнеса в Узбекистане, Центральной Азии и странах Ближнего Востока. Мы верим, что качественная клиентская поддержка не должна быть роскошью, а технология — сложной.

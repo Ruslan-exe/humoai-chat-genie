@@ -108,11 +108,11 @@ const Pricing = () => {
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Цены
+                {t('pricing.title')}
               </span>
             </h1>
             <p className="text-xl text-white/90 leading-relaxed mb-8">
-              Прозрачные цены без скрытых платежей. Все тарифы включают бесплатный 14-дневный пробный период и возможность отказа в любое время.
+              {t('pricing.subtitle')}
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <span className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white">
@@ -145,7 +145,7 @@ const Pricing = () => {
               >
                 {plan.popular && (
                   <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-primary text-white">
-                    Популярный + Скидка 33%
+                    {t('pricing.popular')}
                   </Badge>
                 )}
                 
@@ -187,7 +187,7 @@ const Pricing = () => {
                     className="w-full group"
                     onClick={() => navigate('/hire')}
                   >
-                    Выбрать план
+                    {t('pricing.choose')}
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardContent>
@@ -202,10 +202,10 @@ const Pricing = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-foreground">
-              Частые вопросы
+              {t('pricing.faq.title')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Ответы на популярные вопросы о тарифах
+              {t('pricing.faq.subtitle')}
             </p>
           </div>
           
@@ -296,7 +296,7 @@ const Pricing = () => {
                 onClick={() => navigate('/hire')}
                 className="group"
               >
-                Начать бесплатно
+                {t('pricing.cta.start')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
