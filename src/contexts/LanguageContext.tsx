@@ -594,6 +594,64 @@ const translations = {
     // Services page content
     'services.description': 'We offer a complex of solutions for automating customer support and digital communications using artificial intelligence. Turn your business into a smart company of the future.',
     
+    // Service 1: AI Assistant Development
+    'services.service1.title': 'Turnkey AI Assistant Development',
+    'services.service1.description': 'We create personalized assistants trained on your data and ready to work in any communication channels',
+    'services.service1.feature1': 'Setup and training on your data (website, FAQ, documents, social media)',
+    'services.service1.feature2': 'Ability to brand the assistant to match your company style',
+    'services.service1.feature3': 'Training in multiple languages: Uzbek, Russian, English, Arabic, etc.',
+    'services.service1.feature4': '24/7 customer support without weekends',
+    'services.service1.feature5': 'Processing thousands of requests simultaneously',
+    'services.service1.feature6': 'Analytics of response quality and feedback',
+    'services.service1.action': 'Order Service',
+    
+    // Service 2: Channel Integration
+    'services.service2.title': 'Integration with Communication Channels',
+    'services.service2.description': 'We connect your AI assistants to all popular platforms and internal company systems',
+    'services.service2.feature1': 'Telegram, WhatsApp, Instagram Direct',
+    'services.service2.feature2': 'Implementation on company website and client portals',
+    'services.service2.feature3': 'Integration with corporate CRM and chats',
+    'services.service2.feature4': 'Synchronization with accounting and planning systems',
+    'services.service2.feature5': 'API for connecting to any external services',
+    'services.service2.feature6': 'Unified control panel for all channels',
+    'services.service2.action': 'Order Service',
+    
+    // Service 3: Analytics and Optimization
+    'services.service3.title': 'Analytics and Optimization',
+    'services.service3.description': 'Comprehensive analysis of assistant performance with improvement recommendations and continuous development',
+    'services.service3.feature1': 'Tracking user requests and behavior',
+    'services.service3.feature2': 'Analysis of response effectiveness and customer satisfaction',
+    'services.service3.feature3': 'Continuous improvement of assistant knowledge',
+    'services.service3.feature4': 'Detailed statistics by channels and topics',
+    'services.service3.feature5': 'Load forecasting and resource planning',
+    'services.service3.feature6': 'Automated reports for management',
+    'services.service3.action': 'Order Service',
+    
+    // Service 4: Support and Maintenance
+    'services.service4.title': 'Support and Maintenance',
+    'services.service4.description': 'Complete technical support and development of your AI solutions',
+    'services.service4.feature1': 'Round-the-clock technical support',
+    'services.service4.feature2': 'Individual optimization consultations',
+    'services.service4.feature3': 'Regular updates and scaling of solutions',
+    'services.service4.feature4': 'Staff training on system operation',
+    'services.service4.feature5': 'Data backup and recovery',
+    'services.service4.feature6': '24/7 performance monitoring',
+    'services.service4.action': 'Get Support',
+    
+    // Benefits section
+    'services.benefits.fast.title': 'Instant Deployment',
+    'services.benefits.fast.description': 'We launch your AI office in 24 hours. No long setups, complex integrations or technical barriers. Just fast results.',
+    'services.benefits.multilang.title': 'Multilingual Support',
+    'services.benefits.multilang.description': 'Your AI employee speaks 10+ languages, including Uzbek, Russian, English, Arabic and other regional languages.',
+    'services.benefits.security.title': 'Data Security',
+    'services.benefits.security.description': 'Full compliance with local legislation requirements. Data is stored in Uzbekistan with compliance to all confidentiality standards.',
+    'services.benefits.efficiency.title': 'Proven Efficiency',
+    'services.benefits.efficiency.description': 'Our clients record productivity growth of 40-60% in the first month of working with the AI assistant.',
+    'services.benefits.simplicity.title': 'Ease of Use',
+    'services.benefits.simplicity.description': 'Intuitive platform without need for programming. Any employee will master the system in a few minutes.',
+    'services.benefits.nonstop.title': 'Work Without Breaks',
+    'services.benefits.nonstop.description': 'Your AI employee works 24/7/365, processing thousands of requests simultaneously without fatigue and days off.',
+    
     // Pricing plans
     'pricing.plans.lite.name': 'Lite',
     'pricing.plans.lite.period': '/month',
@@ -604,6 +662,63 @@ const translations = {
     'pricing.plans.individual.name': 'Individual',
     'pricing.plans.individual.price': 'By request',
     'pricing.plans.individual.description': 'Turnkey corporate solutions',
+    
+    // Pricing plan features - Lite
+    'pricing.plans.lite.feature1': 'Up to 1,000 messages per month',
+    'pricing.plans.lite.feature2': '1 AI specialist with basic training',
+    'pricing.plans.lite.feature3': 'Website and messenger integration',
+    'pricing.plans.lite.feature4': 'Email support on business days',
+    'pricing.plans.lite.feature5': 'Basic dialog analytics',
+    'pricing.plans.lite.feature6': 'Ready-made response templates',
+    'pricing.plans.lite.feature7': 'Training on 10 documents',
+    
+    // Pricing plan features - Basic
+    'pricing.plans.basic.feature1': 'Up to 10,000 messages per month',
+    'pricing.plans.basic.feature2': '5 AI specialists with advanced training',
+    'pricing.plans.basic.feature3': 'Integration with CRM, ERP systems',
+    'pricing.plans.basic.feature4': 'Priority 24/7 support',
+    'pricing.plans.basic.feature5': 'Advanced analytics and reports',
+    'pricing.plans.basic.feature6': 'Full interface customization',
+    'pricing.plans.basic.feature7': 'API access and webhooks',
+    'pricing.plans.basic.feature8': 'Training on 100 documents',
+    'pricing.plans.basic.feature9': 'Multilingual support',
+    
+    // Pricing plan features - Individual
+    'pricing.plans.individual.feature1': 'Unlimited number of messages',
+    'pricing.plans.individual.feature2': 'Unlimited number of AI specialists',
+    'pricing.plans.individual.feature3': 'Individual development for tasks',
+    'pricing.plans.individual.feature4': 'Dedicated project manager',
+    'pricing.plans.individual.feature5': 'Corporate analytics and BI',
+    'pricing.plans.individual.feature6': 'White label solutions',
+    'pricing.plans.individual.feature7': '99.9% SLA with guarantees',
+    'pricing.plans.individual.feature8': 'Team and staff training',
+    'pricing.plans.individual.feature9': 'Priority technical support',
+    'pricing.plans.individual.feature10': 'Special integration conditions',
+    
+    // Pricing features section
+    'pricing.features.title': 'What\'s included in all plans',
+    'pricing.features.subtitle': 'Basic features available on all pricing plans',
+    'pricing.features.deployment.title': 'Fast Deployment',
+    'pricing.features.deployment.description': 'Launch in 24 hours without technical difficulties',
+    'pricing.features.multilang.title': 'Multilingual',
+    'pricing.features.multilang.description': 'Support for Uzbek, Russian, English and other languages',
+    'pricing.features.integrations.title': 'Integrations',
+    'pricing.features.integrations.description': 'Connection to website, Telegram, WhatsApp, Instagram',
+    'pricing.features.security.title': 'Security',
+    'pricing.features.security.description': 'Compliance with local legislation and standards',
+    'pricing.features.analytics.title': 'Analytics',
+    'pricing.features.analytics.description': 'Detailed reports on AI specialist performance',
+    'pricing.features.updates.title': 'Updates',
+    'pricing.features.updates.description': 'Regular improvements and new features',
+    
+    // Pricing benefits
+    'pricing.benefits.free_trial': '14-day free trial',
+    'pricing.benefits.no_card': 'No card required',
+    'pricing.benefits.cancel_anytime': 'Cancel anytime',
+    'pricing.benefits.support_24_7': '24/7 technical support',
+    'pricing.final_cta.title': 'Start for free today',
+    'pricing.final_cta.subtitle': '14 days free, no card required, full access to all features',
+    'pricing.contact_expert': 'Contact Expert',
     
     // FAQ questions
     'pricing.faq.q1': 'Can I change the plan?',
