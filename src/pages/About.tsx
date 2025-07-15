@@ -9,33 +9,33 @@ const About = () => {
   const values = [
     {
       icon: Zap,
-      title: 'Развертывание за 1 день',
-      description: 'Запускаем вашего AI-ассистента за 24 часа. Никаких длительных настроек и сложных технических процедур — просто быстрый результат.'
+      title: t('about.values.deployment.title'),
+      description: t('about.values.deployment.description')
     },
     {
       icon: Globe,
-      title: 'Поддержка 10+ языков',
-      description: 'Включая региональные языки: узбекский, таджикский, казахский, киргизский, туркменский, а также русский, английский и арабский.'
+      title: t('about.values.languages.title'),
+      description: t('about.values.languages.description')
     },
     {
       icon: Award,
-      title: 'Локальное законодательство',
-      description: 'Хранение данных в соответствии с требованиями Узбекистана и других стран региона. Полное соблюдение законов о персональных данных.'
+      title: t('about.values.legal.title'),
+      description: t('about.values.legal.description')
     },
     {
       icon: Target,
-      title: 'Рост эффективности на 40–60%',
-      description: 'Наши клиенты видят значительное улучшение клиентского сервиса и сокращение времени обработки запросов уже в первый месяц.'
+      title: t('about.values.efficiency.title'),
+      description: t('about.values.efficiency.description')
     },
     {
       icon: Brain,
-      title: 'Простой запуск без программирования',
-      description: 'Интуитивно понятная платформа, которая не требует технических знаний. Любой сотрудник сможет настроить и управлять AI-ассистентом.'
+      title: t('about.values.simple.title'),
+      description: t('about.values.simple.description')
     },
     {
       icon: Users,
-      title: 'Персонализация под бренд',
-      description: 'Каждый ассистент обучается на ваших данных и говорит языком вашей компании, отражая корпоративные ценности и стиль общения.'
+      title: t('about.values.brand.title'),
+      description: t('about.values.brand.description')
     }
   ];
 

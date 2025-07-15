@@ -133,9 +133,23 @@ const translations = {
     'about.mission.offer3': 'Локализацию под региональные языки',
     'about.mission.offer4': 'Соответствие требованиям локального законодательства',
     'about.mission.offer5': 'Простую и честную подписную модель оплаты',
-    'about.mission.conclusion': 'С нами ваш бизнес станет доступнее, быстрее и ближе к клиенту.',
-    'about.why_choose': 'Почему выбирают HumoAI',
-    'about.why_choose.subtitle': 'Ключевые преимущества нашей платформы',
+      'about.mission.conclusion': 'С нами ваш бизнес станет доступнее, быстрее и ближе к клиенту.',
+      'about.why_choose': 'Почему выбирают HumoAI',
+      'about.why_choose.subtitle': 'Ключевые преимущества нашей платформы',
+      
+      // About page values
+      'about.values.deployment.title': 'Развертывание за 1 день',
+      'about.values.deployment.description': 'Запускаем вашего AI-ассистента за 24 часа. Никаких длительных настроек и сложных технических процедур — просто быстрый результат.',
+      'about.values.languages.title': 'Поддержка 10+ языков',
+      'about.values.languages.description': 'Включая региональные языки: узбекский, таджикский, казахский, киргизский, туркменский, а также русский, английский и арабский.',
+      'about.values.legal.title': 'Локальное законодательство',
+      'about.values.legal.description': 'Хранение данных в соответствии с требованиями Узбекистана и других стран региона. Полное соблюдение законов о персональных данных.',
+      'about.values.efficiency.title': 'Рост эффективности на 40–60%',
+      'about.values.efficiency.description': 'Наши клиенты видят значительное улучшение клиентского сервиса и сокращение времени обработки запросов уже в первый месяц.',
+      'about.values.simple.title': 'Простой запуск без программирования',
+      'about.values.simple.description': 'Интуитивно понятная платформа, которая не требует технических знаний. Любой сотрудник сможет настроить и управлять AI-ассистентом.',
+      'about.values.brand.title': 'Персонализация под бренд',
+      'about.values.brand.description': 'Каждый ассистент обучается на ваших данных и говорит языком вашей компании, отражая корпоративные ценности и стиль общения.',
     
     // Services page content  
     'services.description': 'Мы предлагаем комплекс решений для автоматизации клиентской поддержки и цифровых коммуникаций с помощью искусственного интеллекта. Превратите свой бизнес в умную компанию будущего.',
@@ -299,6 +313,20 @@ const translations = {
     'about.why_choose': 'Nega HumoAI ni tanlashadi',
     'about.why_choose.subtitle': 'Bizning platformamizning asosiy afzalliklari',
     
+    // About page values
+    'about.values.deployment.title': '1 kunda ishga tushirish',
+    'about.values.deployment.description': 'AI-yordamchingizni 24 soat ichida ishga tushiramiz. Uzoq sozlamalar va murakkab texnik jarayonlar yo\'q — faqat tez natija.',
+    'about.values.languages.title': '10+ tilni qo\'llab-quvvatlash',
+    'about.values.languages.description': 'Mintaqaviy tillar: o\'zbek, tojik, qozoq, qirg\'iz, turkman, shuningdek rus, ingliz va arab tillarini o\'z ichiga oladi.',
+    'about.values.legal.title': 'Mahalliy qonunchilik',
+    'about.values.legal.description': 'O\'zbekiston va mintaqa boshqa davlatlarining talablariga muvofiq ma\'lumotlarni saqlash. Shaxsiy ma\'lumotlar qonunlariga to\'liq rioya qilish.',
+    'about.values.efficiency.title': 'Samaradorlik 40-60% o\'sishi',
+    'about.values.efficiency.description': 'Mijozlarimiz birinchi oyda mijozlarga xizmat ko\'rsatishda sezilarli yaxshilanish va so\'rovlarni qayta ishlash vaqtining qisqarishini ko\'rishadi.',
+    'about.values.simple.title': 'Dasturlashsiz oddiy ishga tushirish',
+    'about.values.simple.description': 'Texnik bilim talab qilmaydigan tushunarli platforma. Har qanday xodim AI-yordamchini sozlashi va boshqarishi mumkin.',
+    'about.values.brand.title': 'Brend uchun shaxsiylashtirish',
+    'about.values.brand.description': 'Har bir yordamchi sizning ma\'lumotlaringizda o\'qitiladi va kompaniyangizning tilida gapiradi, korporativ qadriyatlar va muloqot uslubini aks ettiradi.',
+    
     // Services page content
     'services.description': 'Biz sun\'iy intellekt yordamida mijozlarni qo\'llab-quvvatlash va raqamli aloqani avtomatlashtirish uchun kompleks yechimlar taklif qilamiz. Biznesingizni kelajakning aqlli kompaniyasiga aylantiring.',
     
@@ -456,9 +484,23 @@ const translations = {
     'about.mission.offer3': 'Localization for regional languages',
     'about.mission.offer4': 'Compliance with local legislation requirements',
     'about.mission.offer5': 'Simple and honest subscription payment model',
-    'about.mission.conclusion': 'With us, your business will become more accessible, faster and closer to the customer.',
-    'about.why_choose': 'Why Choose HumoAI',
-    'about.why_choose.subtitle': 'Key advantages of our platform',
+      'about.mission.conclusion': 'With us, your business will become more accessible, faster and closer to the customer.',
+      'about.why_choose': 'Why Choose HumoAI',
+      'about.why_choose.subtitle': 'Key advantages of our platform',
+      
+      // About page values
+      'about.values.deployment.title': '1-Day Deployment',
+      'about.values.deployment.description': 'We launch your AI assistant in 24 hours. No lengthy setups and complex technical procedures — just fast results.',
+      'about.values.languages.title': '10+ Language Support',
+      'about.values.languages.description': 'Including regional languages: Uzbek, Tajik, Kazakh, Kyrgyz, Turkmen, as well as Russian, English and Arabic.',
+      'about.values.legal.title': 'Local Legislation',
+      'about.values.legal.description': 'Data storage in accordance with the requirements of Uzbekistan and other countries in the region. Full compliance with personal data laws.',
+      'about.values.efficiency.title': '40-60% Efficiency Growth',
+      'about.values.efficiency.description': 'Our clients see significant improvement in customer service and reduction in request processing time in the first month.',
+      'about.values.simple.title': 'Simple Launch Without Programming',
+      'about.values.simple.description': 'An intuitive platform that does not require technical knowledge. Any employee can set up and manage the AI assistant.',
+      'about.values.brand.title': 'Brand Personalization',
+      'about.values.brand.description': 'Each assistant is trained on your data and speaks in your company\'s language, reflecting corporate values and communication style.',
     
     // Services page content
     'services.description': 'We offer a complex of solutions for automating customer support and digital communications using artificial intelligence. Turn your business into a smart company of the future.',
