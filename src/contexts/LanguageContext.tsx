@@ -594,6 +594,52 @@ const translations = {
     // Services page content
     'services.description': 'We offer a complex of solutions for automating customer support and digital communications using artificial intelligence. Turn your business into a smart company of the future.',
     
+    // AI Development Service
+    'services.ai_development.title': 'Turnkey AI Assistant Development',
+    'services.ai_development.description': 'We create personalized assistants trained on your data and ready to work in any communication channels',
+    'services.ai_development.feature1': 'Setup and training on your data (website, FAQ, documents, social media)',
+    'services.ai_development.feature2': 'Ability to brand the assistant to match your company style',
+    'services.ai_development.feature3': 'Training in multiple languages: Uzbek, Russian, English, Arabic, etc.',
+    'services.ai_development.feature4': '24/7 customer support without weekends',
+    'services.ai_development.feature5': 'Processing thousands of requests simultaneously',
+    'services.ai_development.feature6': 'Analytics of response quality and feedback',
+    'services.order_service': 'Order Service',
+    
+    // Integration Service
+    'services.integration.title': 'Integration with Communication Channels',
+    'services.integration.description': 'We connect your AI assistants to all popular platforms and internal company systems',
+    'services.integration.feature1': 'Telegram, WhatsApp, Instagram Direct',
+    'services.integration.feature2': 'Implementation on company website and client portals',
+    'services.integration.feature3': 'Integration with corporate CRM and chats',
+    'services.integration.feature4': 'Synchronization with accounting and planning systems',
+    'services.integration.feature5': 'API for connecting to any external services',
+    'services.integration.feature6': 'Unified control panel for all channels',
+    
+    // Analytics Service
+    'services.analytics.title': 'Analytics and Optimization',
+    'services.analytics.description': 'Comprehensive analysis of assistant performance with improvement recommendations and continuous development',
+    'services.analytics.feature1': 'Tracking user requests and behavior',
+    'services.analytics.feature2': 'Analysis of response effectiveness and customer satisfaction',
+    'services.analytics.feature3': 'Continuous improvement of assistant knowledge',
+    'services.analytics.feature4': 'Detailed statistics by channels and topics',
+    'services.analytics.feature5': 'Load forecasting and resource planning',
+    'services.analytics.feature6': 'Automated reports for management',
+    
+    // Support Service
+    'services.support.title': 'Support and Maintenance',
+    'services.support.description': 'Complete technical support and development of your AI solutions',
+    'services.support.feature1': 'Round-the-clock technical support',
+    'services.support.feature2': 'Individual optimization consultations',
+    'services.support.feature3': 'Regular updates and scaling of solutions',
+    'services.support.feature4': 'Staff training on system operation',
+    'services.support.feature5': 'Data backup and recovery',
+    'services.support.feature6': '24/7 performance monitoring',
+    'services.get_support': 'Get Support',
+    
+    // Benefits section
+    'services.benefits.instant.title': 'Instant Deployment',
+    'services.benefits.instant.description': 'We launch your AI office in 24 hours. No long setups, complex integrations or technical barriers. Just fast results.',
+    
     // Service 1: AI Assistant Development
     'services.service1.title': 'Turnkey AI Assistant Development',
     'services.service1.description': 'We create personalized assistants trained on your data and ready to work in any communication channels',
