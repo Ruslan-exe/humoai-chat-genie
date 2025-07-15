@@ -14,86 +14,86 @@ const Pricing = () => {
     {
       name: 'Lite',
       price: '100',
-      period: '/мес',
-      description: 'Идеально для малого бизнеса и стартапов',
+      period: t('pricing.plans.lite.period'),
+      description: t('pricing.plans.lite.description'),
       icon: Zap,
       popular: false,
       features: [
-        'До 1,000 сообщений в месяц',
-        '1 ИИ-специалист с базовым обучением',
-        'Интеграция с сайтом и мессенджерами',
-        'Email поддержка в рабочие дни',
-        'Базовая аналитика диалогов',
-        'Готовые шаблоны ответов',
-        'Обучение на 10 документах'
+        t('pricing.plans.lite.feature1'),
+        t('pricing.plans.lite.feature2'),
+        t('pricing.plans.lite.feature3'),
+        t('pricing.plans.lite.feature4'),
+        t('pricing.plans.lite.feature5'),
+        t('pricing.plans.lite.feature6'),
+        t('pricing.plans.lite.feature7')
       ]
     },
     {
       name: 'Basic',
       price: '199',
       originalPrice: '299',
-      period: '/мес',
-      description: 'Оптимальное решение для растущего бизнеса',
+      period: t('pricing.plans.basic.period'),
+      description: t('pricing.plans.basic.description'),
       icon: Star,
       popular: true,
       features: [
-        'До 10,000 сообщений в месяц',
-        '5 ИИ-специалистов с углубленным обучением',
-        'Интеграция с CRM, ERP системами',
-        'Приоритетная поддержка 24/7',
-        'Продвинутая аналитика и отчеты',
-        'Полная кастомизация интерфейса',
-        'API доступ и webhooks',
-        'Обучение на 100 документах',
-        'Многоязычная поддержка'
+        t('pricing.plans.basic.feature1'),
+        t('pricing.plans.basic.feature2'),
+        t('pricing.plans.basic.feature3'),
+        t('pricing.plans.basic.feature4'),
+        t('pricing.plans.basic.feature5'),
+        t('pricing.plans.basic.feature6'),
+        t('pricing.plans.basic.feature7'),
+        t('pricing.plans.basic.feature8'),
+        t('pricing.plans.basic.feature9')
       ]
     },
     {
       name: 'Individual',
-      price: 'По запросу',
+      price: t('pricing.plans.individual.price'),
       period: '',
-      description: 'Корпоративные решения под ключ',
+      description: t('pricing.plans.individual.description'),
       icon: Crown,
       popular: false,
       features: [
-        'Неограниченное количество сообщений',
-        'Неограниченное количество ИИ-специалистов',
-        'Индивидуальная разработка под задачи',
-        'Выделенный менеджер проекта',
-        'Корпоративная аналитика и BI',
-        'Белый лейбл решения',
-        'SLA 99.9% с гарантиями',
-        'Обучение команды и сотрудников',
-        'Приоритетная техподдержка',
-        'Специальные условия интеграции'
+        t('pricing.plans.individual.feature1'),
+        t('pricing.plans.individual.feature2'),
+        t('pricing.plans.individual.feature3'),
+        t('pricing.plans.individual.feature4'),
+        t('pricing.plans.individual.feature5'),
+        t('pricing.plans.individual.feature6'),
+        t('pricing.plans.individual.feature7'),
+        t('pricing.plans.individual.feature8'),
+        t('pricing.plans.individual.feature9'),
+        t('pricing.plans.individual.feature10')
       ]
     }
   ];
 
   const faqs = [
     {
-      question: 'Можно ли изменить тариф?',
-      answer: 'Да, вы можете повысить или понизить тариф в любое время. При повышении тарифа изменения вступают в силу немедленно, при понижении - со следующего платежного периода. Мы вернем разницу пропорционально.'
+      question: t('pricing.faq.q1'),
+      answer: t('pricing.faq.a1')
     },
     {
-      question: 'Есть ли бесплатный период?',
-      answer: 'Да, мы предоставляем 14-дневный бесплатный пробный период для всех тарифов. Никаких обязательств - вы можете отменить в любое время без списания средств.'
+      question: t('pricing.faq.q2'),
+      answer: t('pricing.faq.a2')
     },
     {
-      question: 'Что включает поддержка?',
-      answer: 'Поддержка включает помощь в настройке ИИ-специалистов, обучение вашей команды, техническую поддержку, консультации по оптимизации и регулярные обновления системы.'
+      question: t('pricing.faq.q3'),
+      answer: t('pricing.faq.a3')
     },
     {
-      question: 'Безопасны ли мои данные?',
-      answer: 'Абсолютно. Мы используем шифрование AES-256, соблюдаем стандарты ISO 27001, GDPR и локальное законодательство по защите данных. Ваши данные хранятся на серверах в Узбекистане.'
+      question: t('pricing.faq.q4'),
+      answer: t('pricing.faq.a4')
     },
     {
-      question: 'Сколько времени занимает внедрение?',
-      answer: 'Базовое внедрение занимает 24 часа. Полная настройка под ваши процессы - от 3 до 7 дней в зависимости от сложности. Мы предоставляем поэтапный план внедрения.'
+      question: t('pricing.faq.q5'),
+      answer: t('pricing.faq.a5')
     },
     {
-      question: 'Можно ли интегрироваться с нашими системами?',
-      answer: 'Да, мы поддерживаем интеграцию с популярными CRM, ERP системами, мессенджерами и можем создать кастомные интеграции через API для любых систем.'
+      question: t('pricing.faq.q6'),
+      answer: t('pricing.faq.a6')
     }
   ];
 
@@ -116,16 +116,16 @@ const Pricing = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <span className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white">
-                ✓ Бесплатный пробный период 14 дней
+                ✓ {t('pricing.benefits.free_trial')}
               </span>
               <span className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white">
-                ✓ Без привязки карты
+                ✓ {t('pricing.benefits.no_card')}
               </span>
               <span className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white">
-                ✓ Отмена в любое время
+                ✓ {t('pricing.benefits.cancel_anytime')}
               </span>
               <span className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white">
-                ✓ Техподдержка 24/7
+                ✓ {t('pricing.benefits.support_24_7')}
               </span>
             </div>
           </div>
@@ -227,43 +227,43 @@ const Pricing = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-foreground">
-              Что входит во все тарифы
+              {t('pricing.features.title')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Базовые возможности, доступные на всех тарифных планах
+              {t('pricing.features.subtitle')}
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
-                title: 'Быстрое развертывание',
-                description: 'Запуск за 24 часа без технических сложностей',
+                title: t('pricing.features.deployment.title'),
+                description: t('pricing.features.deployment.description'),
                 icon: '🚀'
               },
               {
-                title: 'Многоязычность',
-                description: 'Поддержка узбекского, русского, английского и других языков',
+                title: t('pricing.features.multilang.title'),
+                description: t('pricing.features.multilang.description'),
                 icon: '🌍'
               },
               {
-                title: 'Интеграции',
-                description: 'Подключение к сайту, Telegram, WhatsApp, Instagram',
+                title: t('pricing.features.integrations.title'),
+                description: t('pricing.features.integrations.description'),
                 icon: '🔗'
               },
               {
-                title: 'Безопасность',
-                description: 'Соответствие местному законодательству и стандартам',
+                title: t('pricing.features.security.title'),
+                description: t('pricing.features.security.description'),
                 icon: '🔐'
               },
               {
-                title: 'Аналитика',
-                description: 'Подробные отчеты о работе ИИ-специалистов',
+                title: t('pricing.features.analytics.title'),
+                description: t('pricing.features.analytics.description'),
                 icon: '📊'
               },
               {
-                title: 'Обновления',
-                description: 'Регулярные улучшения и новые функции',
+                title: t('pricing.features.updates.title'),
+                description: t('pricing.features.updates.description'),
                 icon: '🔄'
               }
             ].map((feature, index) => (
@@ -284,10 +284,10 @@ const Pricing = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold mb-6 text-foreground">
-              Начните бесплатно уже сегодня
+              {t('pricing.final_cta.title')}
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              14 дней бесплатно, без привязки карты, полный доступ ко всем функциям
+              {t('pricing.final_cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -304,7 +304,7 @@ const Pricing = () => {
                 size="xl"
                 onClick={() => navigate('/contact')}
               >
-                Связаться с экспертом
+                {t('pricing.contact_expert')}
               </Button>
             </div>
           </div>

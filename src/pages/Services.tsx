@@ -24,45 +24,45 @@ const Services = () => {
   const services = [
     {
       icon: Bot,
-      title: '🤖 Разработка AI-ассистентов под ключ',
-      description: 'Создаем персонализированных ассистентов, обученных на ваших данных и готовых работать в любых каналах коммуникации',
+      title: t('services.ai_development.title'),
+      description: t('services.ai_development.description'),
       features: [
-        'Настройка и обучение на ваших данных (сайт, FAQ, документы, соцсети)',
-        'Возможность брендировать ассистента под фирменный стиль компании',
-        'Обучение на нескольких языках: узбекский, русский, английский, арабский и др.',
-        'Круглосуточная поддержка клиентов без выходных',
-        'Обработка тысяч запросов одновременно',
-        'Аналитика качества ответов и обратной связи'
+        t('services.ai_development.feature1'),
+        t('services.ai_development.feature2'),
+        t('services.ai_development.feature3'),
+        t('services.ai_development.feature4'),
+        t('services.ai_development.feature5'),
+        t('services.ai_development.feature6')
       ],
       color: 'text-blue-500',
       bgColor: 'bg-blue-500/10'
     },
     {
       icon: MessageSquare,
-      title: '📲 Интеграция с каналами общения',
-      description: 'Подключаем ваших AI-ассистентов ко всем популярным платформам и внутренним системам компании',
+      title: t('services.integration.title'),
+      description: t('services.integration.description'),
       features: [
-        'Telegram, WhatsApp, Instagram Direct',
-        'Внедрение на сайт компании и в клиентские порталы',
-        'Интеграция с корпоративными CRM и чатами',
-        'Синхронизация с системами учета и планирования',
-        'API для подключения к любым внешним сервисам',
-        'Единая панель управления всеми каналами'
+        t('services.integration.feature1'),
+        t('services.integration.feature2'),
+        t('services.integration.feature3'),
+        t('services.integration.feature4'),
+        t('services.integration.feature5'),
+        t('services.integration.feature6')
       ],
       color: 'text-green-500',
       bgColor: 'bg-green-500/10'
     },
     {
       icon: BarChart3,
-      title: '📊 Аналитика и оптимизация',
-      description: 'Комплексный анализ работы ассистентов с рекомендациями по улучшению и постоянным развитием',
+      title: t('services.analytics.title'),
+      description: t('services.analytics.description'),
       features: [
-        'Отслеживание пользовательских запросов и поведения',
-        'Анализ эффективности ответов и удовлетворенности клиентов',
-        'Постоянное улучшение знаний ассистента',
-        'Детальная статистика по каналам и темам',
-        'Прогнозирование нагрузки и планирование ресурсов',
-        'Автоматические отчеты для руководства'
+        t('services.analytics.feature1'),
+        t('services.analytics.feature2'),
+        t('services.analytics.feature3'),
+        t('services.analytics.feature4'),
+        t('services.analytics.feature5'),
+        t('services.analytics.feature6')
       ],
       color: 'text-purple-500',
       bgColor: 'bg-purple-500/10'
@@ -72,15 +72,15 @@ const Services = () => {
   const additionalServices = [
     {
       icon: Shield,
-      title: '⚙️ Поддержка и сопровождение',
-      description: 'Полное техническое сопровождение и развитие ваших AI-решений',
+      title: t('services.support.title'),
+      description: t('services.support.description'),
       features: [
-        'Круглосуточная техническая поддержка',
-        'Индивидуальные консультации по оптимизации',
-        'Регулярное обновление и масштабирование решений',
-        'Обучение персонала работе с системой',
-        'Резервное копирование и восстановление данных',
-        'Мониторинг производительности 24/7'
+        t('services.support.feature1'),
+        t('services.support.feature2'),
+        t('services.support.feature3'),
+        t('services.support.feature4'),
+        t('services.support.feature5'),
+        t('services.support.feature6')
       ]
     }
   ];
@@ -88,33 +88,33 @@ const Services = () => {
   const benefits = [
     {
       icon: Zap,
-      title: 'Мгновенное развертывание',
-      description: 'Запускаем ваш AI-офис за 24 часа. Никаких долгих настроек, сложных интеграций или технических барьеров. Просто быстрый результат.'
+      title: t('services.benefits.instant.title'),
+      description: t('services.benefits.instant.description')
     },
     {
       icon: Globe,
-      title: 'Многоязычная поддержка',
-      description: 'Ваш ИИ-сотрудник говорит на 10+ языках, включая узбекский, русский, английский, арабский и другие региональные языки.'
+      title: t('services.benefits.multilang.title'),
+      description: t('services.benefits.multilang.description')
     },
     {
       icon: Shield,
-      title: 'Безопасность данных',
-      description: 'Полное соответствие требованиям местного законодательства. Данные хранятся в Узбекистане с соблюдением всех норм конфиденциальности.'
+      title: t('services.benefits.security.title'),
+      description: t('services.benefits.security.description')
     },
     {
       icon: Target,
-      title: 'Доказанная эффективность',
-      description: 'Наши клиенты фиксируют рост производительности на 40-60% уже в первый месяц работы с AI-ассистентом.'
+      title: t('services.benefits.efficiency.title'),
+      description: t('services.benefits.efficiency.description')
     },
     {
       icon: Users,
-      title: 'Простота использования',
-      description: 'Интуитивная платформа без необходимости в программировании. Любой сотрудник освоит систему за несколько минут.'
+      title: t('services.benefits.simplicity.title'),
+      description: t('services.benefits.simplicity.description')
     },
     {
       icon: Clock,
-      title: 'Работа без перерывов',
-      description: 'Ваш ИИ-сотрудник работает 24/7/365, обрабатывая тысячи запросов одновременно без усталости и выходных.'
+      title: t('services.benefits.nonstop.title'),
+      description: t('services.benefits.nonstop.description')
     }
   ];
 
@@ -166,7 +166,7 @@ const Services = () => {
                     className="w-full group"
                     onClick={() => navigate('/hire')}
                   >
-                    Заказать услугу
+                    {t('services.order_service')}
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardContent>
@@ -203,7 +203,7 @@ const Services = () => {
                     className="w-full mt-6 group"
                     onClick={() => navigate('/hire')}
                   >
-                    Получить поддержку
+                    {t('services.get_support')}
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardContent>
