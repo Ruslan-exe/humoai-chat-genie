@@ -100,7 +100,7 @@ const Pricing = () => {
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                {t('pricing.title') || 'Цены'}
+                Цены
               </span>
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
@@ -180,10 +180,10 @@ const Pricing = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-foreground">
-              {t('pricing.faq.title') || 'Частые вопросы'}
+              Частые вопросы
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t('pricing.faq.subtitle') || 'Ответы на популярные вопросы о тарифах'}
+              Ответы на популярные вопросы о тарифах
             </p>
           </div>
           
@@ -205,10 +205,10 @@ const Pricing = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold mb-6 text-foreground">
-              {t('pricing.cta.title') || 'Начните бесплатно уже сегодня'}
+              Начните бесплатно уже сегодня
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              {t('pricing.cta.subtitle') || '14 дней бесплатно, без привязки карты, полный доступ ко всем функциям'}
+              14 дней бесплатно, без привязки карты, полный доступ ко всем функциям
             </p>
             <Button
               variant="hero"

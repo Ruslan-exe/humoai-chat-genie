@@ -232,11 +232,11 @@ export const HireForm = () => {
           <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-5xl font-bold mb-4">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                {t('form.title')}
+                Нанять ИИ-специалиста
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              {t('form.subtitle')}
+              Создайте персонального ИИ-сотрудника для вашего бизнеса за 1 минуту
             </p>
           </div>
 
@@ -253,11 +253,11 @@ export const HireForm = () => {
                 <div className="space-y-2">
                   <Label htmlFor="companyInfo" className="text-lg font-medium flex items-center gap-2">
                     <FileText className="w-5 h-5 text-primary" />
-                    {t('form.company.label')}
+                    Информация о компании
                   </Label>
                   <Textarea
                     id="companyInfo"
-                    placeholder={t('form.company.placeholder')}
+                    placeholder="Расскажите о вашей компании, товарах/услугах, целевой аудитории..."
                     value={formData.companyInfo}
                     onChange={(e) => setFormData(prev => ({ ...prev, companyInfo: e.target.value }))}
                     className="min-h-[120px] resize-none"
@@ -269,7 +269,7 @@ export const HireForm = () => {
                 <div className="space-y-2">
                   <Label className="text-lg font-medium flex items-center gap-2">
                     <Upload className="w-5 h-5 text-primary" />
-                    {t('form.file.label')}
+                    Загрузите документы (необязательно)
                   </Label>
                   <div className="border-2 border-dashed border-border rounded-lg p-8 text-center hover:border-primary transition-colors">
                     <input
@@ -282,7 +282,7 @@ export const HireForm = () => {
                     <label htmlFor="fileUpload" className="cursor-pointer">
                       <Upload className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
                       <p className="text-muted-foreground">
-                        {formData.file ? formData.file.name : t('form.file.placeholder')}
+                        {formData.file ? formData.file.name : 'Прайс-лист, FAQ, каталог товаров или другие материалы'}
                       </p>
                     </label>
                   </div>
@@ -292,12 +292,12 @@ export const HireForm = () => {
                 <div className="space-y-2">
                   <Label htmlFor="website" className="text-lg font-medium flex items-center gap-2">
                     <Globe className="w-5 h-5 text-primary" />
-                    {t('form.website.label')}
+                    Сайт компании (необязательно)
                   </Label>
                   <Input
                     id="website"
                     type="url"
-                    placeholder={t('form.website.placeholder')}
+                    placeholder="https://your-website.com"
                     value={formData.website}
                     onChange={(e) => setFormData(prev => ({ ...prev, website: e.target.value }))}
                     className="text-lg py-3"
@@ -315,12 +315,12 @@ export const HireForm = () => {
                   {isProcessing ? (
                     <>
                       <Loader2 className="w-5 h-5 animate-spin" />
-                      {t('form.processing')}
+                      Создаем ИИ-специалиста...
                     </>
                   ) : (
                     <>
                       <LinkIcon className="w-5 h-5" />
-                      {t('form.submit')}
+                      Создать ИИ-специалиста
                     </>
                   )}
                 </Button>

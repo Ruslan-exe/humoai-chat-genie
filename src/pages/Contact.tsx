@@ -116,7 +116,7 @@ const Contact = () => {
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                {t('contact.title') || 'Контакты'}
+                Контакты
               </span>
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
@@ -149,10 +149,10 @@ const Contact = () => {
             <Card className="shadow-glow">
               <CardHeader>
                 <CardTitle className="text-2xl">
-                  {t('contact.form.title') || 'Напишите нам'}
+                  Напишите нам
                 </CardTitle>
                 <p className="text-muted-foreground">
-                  {t('contact.form.subtitle') || 'Заполните форму и мы свяжемся с вами в ближайшее время'}
+                  Заполните форму и мы свяжемся с вами в ближайшее время
                 </p>
               </CardHeader>
               <CardContent>
@@ -236,10 +236,10 @@ const Contact = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-foreground">
-                  {t('contact.support.title') || 'Поддержка'}
+                  Поддержка
                 </h2>
                 <p className="text-muted-foreground mb-8">
-                  {t('contact.support.subtitle') || 'Выберите удобный способ получения помощи'}
+                  Выберите удобный способ получения помощи
                 </p>
               </div>
 
@@ -270,10 +270,10 @@ const Contact = () => {
                   <div className="text-center">
                     <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
                     <h3 className="text-lg font-semibold text-foreground mb-2">
-                      {t('contact.map.title') || 'Наш офис'}
+                      Наш офис
                     </h3>
                     <p className="text-muted-foreground">
-                      {t('contact.map.desc') || 'Москва, ул. Тверская, 1'}
+                      Ташкент, Узбекистан
                     </p>
                   </div>
                 </div>

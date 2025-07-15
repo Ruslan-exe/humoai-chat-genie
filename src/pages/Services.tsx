@@ -218,10 +218,10 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-foreground">
-              {t('services.benefits.title') || 'Преимущества наших решений'}
+              Преимущества наших решений
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t('services.benefits.subtitle') || 'Почему клиенты выбирают HumoAI'}
+              Почему клиенты выбирают HumoAI
             </p>
           </div>
           
@@ -244,10 +244,10 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold mb-6 text-foreground">
-              {t('services.cta.title') || 'Готовы начать?'}
+              Готовы начать?
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              {t('services.cta.subtitle') || 'Получите персонального ИИ-специалиста для вашего бизнеса уже сегодня'}
+              Получите персонального ИИ-специалиста для вашего бизнеса уже сегодня
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -256,7 +256,7 @@ const Services = () => {
                 onClick={() => navigate('/hire')}
                 className="group"
               >
-                {t('services.cta.hire') || 'Нанять ИИ-специалиста'}
+                Нанять ИИ-специалиста
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
@@ -264,7 +264,7 @@ const Services = () => {
                 size="xl"
                 onClick={() => navigate('/chat')}
               >
-                {t('services.cta.demo') || 'Попробовать демо'}
+                Попробовать демо
               </Button>
             </div>
           </div>
