@@ -57,7 +57,7 @@ const About = () => {
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                {t('about.title') || 'О нас'}
+                Наша компания
               </span>
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
@@ -73,7 +73,7 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold mb-6 text-foreground">
-                {t('about.mission.title') || 'Наша миссия'}
+                Миссия
               </h2>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
                 Наша миссия — демократизировать доступ к искусственному интеллекту для малого и среднего бизнеса в Узбекистане, Центральной Азии и странах Ближнего Востока. Мы верим, что качественная клиентская поддержка не должна быть роскошью, а технология — сложной.
@@ -155,40 +155,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-foreground">
-              {t('about.team.title') || 'Наша команда'}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t('about.team.subtitle') || 'Профессионалы, которые делают будущее реальностью'}
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((member) => (
-              <Card key={member} className="text-center hover:shadow-glow transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <Users className="w-12 h-12 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">
-                    {t(`about.team.member${member}.name`) || `Эксперт ${member}`}
-                  </h3>
-                  <p className="text-primary mb-4">
-                    {t(`about.team.member${member}.role`) || 'AI Специалист'}
-                  </p>
-                  <p className="text-muted-foreground text-sm">
-                    {t(`about.team.member${member}.desc`) || 'Опытный специалист в области искусственного интеллекта'}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
