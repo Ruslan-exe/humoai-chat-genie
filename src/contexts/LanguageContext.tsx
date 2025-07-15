@@ -89,6 +89,63 @@ const translations = {
     'pricing.subtitle': 'Прозрачные цены без скрытых платежей. Все тарифы включают бесплатный 14-дневный пробный период и возможность отказа в любое время.',
     'pricing.popular': 'Популярный + Скидка 33%',
     'pricing.choose': 'Выбрать план',
+    
+    // Pricing features section
+    'pricing.features.title': 'Что входит во все тарифы',
+    'pricing.features.subtitle': 'Базовые возможности, доступные на всех тарифных планах',
+    'pricing.features.deployment.title': 'Быстрое развертывание',
+    'pricing.features.deployment.description': 'Запуск за 24 часа без технических сложностей',
+    'pricing.features.multilang.title': 'Многоязычность',
+    'pricing.features.multilang.description': 'Поддержка узбекского, русского, английского и других языков',
+    'pricing.features.integrations.title': 'Интеграции',
+    'pricing.features.integrations.description': 'Подключение к сайту, Telegram, WhatsApp, Instagram',
+    'pricing.features.security.title': 'Безопасность',
+    'pricing.features.security.description': 'Соответствие местному законодательству и стандартам',
+    'pricing.features.analytics.title': 'Аналитика',
+    'pricing.features.analytics.description': 'Подробные отчеты о работе ИИ-специалистов',
+    'pricing.features.updates.title': 'Обновления',
+    'pricing.features.updates.description': 'Регулярные улучшения и новые функции',
+    
+    // Final CTA section
+    'pricing.final_cta.title': 'Начните бесплатно уже сегодня',
+    'pricing.final_cta.subtitle': '14 дней бесплатно, без привязки карты, полный доступ ко всем функциям',
+    
+    // Benefits
+    'pricing.benefits.free_trial': '14 дней бесплатного тестирования',
+    'pricing.benefits.no_card': 'Без привязки банковской карты',
+    'pricing.benefits.cancel_anytime': 'Отмена подписки в любое время',
+    'pricing.benefits.support_24_7': 'Круглосуточная поддержка',
+    
+    // Pricing plan features
+    'pricing.plans.lite.feature1': 'До 1,000 сообщений в месяц',
+    'pricing.plans.lite.feature2': '1 ИИ-специалист с базовым обучением',
+    'pricing.plans.lite.feature3': 'Интеграция с сайтом и мессенджерами',
+    'pricing.plans.lite.feature4': 'Email поддержка в рабочие дни',
+    'pricing.plans.lite.feature5': 'Базовая аналитика диалогов',
+    'pricing.plans.lite.feature6': 'Готовые шаблоны ответов',
+    'pricing.plans.lite.feature7': 'Обучение на 10 документах',
+    
+    'pricing.plans.basic.feature1': 'До 10,000 сообщений в месяц',
+    'pricing.plans.basic.feature2': '5 ИИ-специалистов с углубленным обучением',
+    'pricing.plans.basic.feature3': 'Интеграция с CRM, ERP системами',
+    'pricing.plans.basic.feature4': 'Приоритетная поддержка 24/7',
+    'pricing.plans.basic.feature5': 'Продвинутая аналитика и отчеты',
+    'pricing.plans.basic.feature6': 'Полная кастомизация интерфейса',
+    'pricing.plans.basic.feature7': 'API доступ и webhooks',
+    'pricing.plans.basic.feature8': 'Обучение на 100 документах',
+    'pricing.plans.basic.feature9': 'Многоязычная поддержка',
+    
+    'pricing.plans.individual.feature1': 'Неограниченное количество сообщений',
+    'pricing.plans.individual.feature2': 'Неограниченное количество ИИ-специалистов',
+    'pricing.plans.individual.feature3': 'Индивидуальная разработка под задачи',
+    'pricing.plans.individual.feature4': 'Выделенный менеджер проекта',
+    'pricing.plans.individual.feature5': 'Корпоративная аналитика и BI',
+    'pricing.plans.individual.feature6': 'Белый лейбл решения',
+    'pricing.plans.individual.feature7': 'SLA 99.9% с гарантиями',
+    'pricing.plans.individual.feature8': 'Обучение команды и сотрудников',
+    'pricing.plans.individual.feature9': 'Приоритетная техподдержка',
+    'pricing.plans.individual.feature10': 'Специальные условия интеграции',
+    
     'pricing.faq.title': 'Частые вопросы',
     'pricing.faq.subtitle': 'Ответы на популярные вопросы о тарифах',
     'pricing.cta.title': 'Начните бесплатно уже сегодня',
