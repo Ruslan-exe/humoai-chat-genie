@@ -66,21 +66,21 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: t('contact.phone') || 'Телефон',
+      title: 'Телефон',
       value: '+998917982104',
-      description: t('contact.phone.desc') || 'Звоните в рабочее время'
+      description: 'Ответим в течение 1 минуты'
     },
     {
       icon: Mail,
-      title: t('contact.email') || 'Email',
+      title: 'Email',
       value: 'isanbaevruslan04@gmail.com',
-      description: t('contact.email.desc') || 'Ответим в течение 24 часов'
+      description: 'Ответим в течение 1 часа'
     },
     {
       icon: MapPin,
-      title: t('contact.address') || 'Адрес',
-      value: 'Москва, ул. Тверская, 1',
-      description: t('contact.address.desc') || 'Центральный офис'
+      title: 'Офис',
+      value: 'Ташкент, Узбекистан',
+      description: 'Центр Азии'
     },
     {
       icon: MessageSquare,
@@ -93,15 +93,24 @@ const Contact = () => {
   const supportOptions = [
     {
       icon: MessageSquare,
-      title: t('contact.support.chat') || 'Онлайн чат',
-      description: t('contact.support.chat.desc') || 'Мгновенные ответы на ваши вопросы',
-      action: t('contact.support.chat.action') || 'Начать чат'
+      title: 'Онлайн чат',
+      description: 'Мгновенные ответы на ваши вопросы через чат на сайте или Telegram',
+      action: 'Начать чат',
+      details: 'Среднее время ответа: 2 минуты'
     },
     {
       icon: Headphones,
-      title: t('contact.support.call') || 'Телефонная поддержка',
-      description: t('contact.support.call.desc') || 'Персональная консультация по телефону',
-      action: t('contact.support.call.action') || 'Заказать звонок'
+      title: 'Телефонная поддержка',
+      description: 'Персональная консультация с экспертом по телефону или видеозвонку',
+      action: 'Заказать звонок',
+      details: 'Бесплатные консультации до 30 минут'
+    },
+    {
+      icon: Clock,
+      title: 'Техническая поддержка',
+      description: 'Помощь в настройке, интеграции и решении технических вопросов',
+      action: 'Создать тикет',
+      details: 'Приоритетная поддержка 24/7'
     }
   ];
 
@@ -119,9 +128,26 @@ const Contact = () => {
                 Контакты
               </span>
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
-              {t('contact.subtitle') || 'Готовы обсудить ваш проект? Наши эксперты помогут выбрать оптимальное ИИ-решение и просчитают стоимость внедрения.'}
+            <p className="text-xl text-white/90 leading-relaxed mb-8">
+              Свяжитесь с нами любым удобным способом. Наши эксперты готовы обсудить ваш проект, ответить на вопросы и помочь выбрать оптимальное ИИ-решение для вашего бизнеса.
             </p>
+            <div className="grid md:grid-cols-3 gap-4 text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <Clock className="w-8 h-8 text-white mx-auto mb-2" />
+                <div className="text-white font-semibold">Быстрый ответ</div>
+                <div className="text-white/80 text-sm">В течение 2 часов</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <Headphones className="w-8 h-8 text-white mx-auto mb-2" />
+                <div className="text-white font-semibold">24/7 Поддержка</div>
+                <div className="text-white/80 text-sm">Круглосуточно</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <MessageSquare className="w-8 h-8 text-white mx-auto mb-2" />
+                <div className="text-white font-semibold">Бесплатная консультация</div>
+                <div className="text-white/80 text-sm">30 минут с экспертом</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -253,7 +279,8 @@ const Contact = () => {
                         </div>
                         <div className="flex-1">
                           <h3 className="text-xl font-semibold mb-2 text-foreground">{option.title}</h3>
-                          <p className="text-muted-foreground mb-4">{option.description}</p>
+                          <p className="text-muted-foreground mb-2">{option.description}</p>
+                          <p className="text-sm text-primary mb-4">{option.details}</p>
                           <Button variant="outline" size="sm">
                             {option.action}
                           </Button>
@@ -264,6 +291,33 @@ const Contact = () => {
                 ))}
               </div>
 
+              {/* Contact Hours */}
+              <Card className="bg-gradient-card">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-4 text-foreground">Часы работы</h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Понедельник - Пятница</span>
+                      <span className="font-medium">9:00 - 18:00</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Суббота</span>
+                      <span className="font-medium">10:00 - 16:00</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Воскресенье</span>
+                      <span className="font-medium">Выходной</span>
+                    </div>
+                    <div className="border-t pt-3 mt-3">
+                      <div className="flex justify-between">
+                        <span className="text-primary font-medium">Экстренная поддержка</span>
+                        <span className="text-primary font-medium">24/7</span>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
               {/* Map placeholder */}
               <Card className="overflow-hidden">
                 <div className="h-64 bg-gradient-primary/10 flex items-center justify-center">
@@ -272,8 +326,11 @@ const Contact = () => {
                     <h3 className="text-lg font-semibold text-foreground mb-2">
                       Наш офис
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground mb-2">
                       Ташкент, Узбекистан
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      В центре технологического района
                     </p>
                   </div>
                 </div>
