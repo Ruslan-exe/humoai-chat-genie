@@ -208,8 +208,64 @@ const translations = {
       'about.values.brand.title': 'Персонализация под бренд',
       'about.values.brand.description': 'Каждый ассистент обучается на ваших данных и говорит языком вашей компании, отражая корпоративные ценности и стиль общения.',
     
-    // Services page content  
+    // Services page content
     'services.description': 'Мы предлагаем комплекс решений для автоматизации клиентской поддержки и цифровых коммуникаций с помощью искусственного интеллекта. Превратите свой бизнес в умную компанию будущего.',
+    
+    // AI Development Service
+    'services.ai_development.title': 'Разработка AI-ассистентов под ключ',
+    'services.ai_development.description': 'Создаем персонализированных ассистентов, обученных на ваших данных и готовых работать в любых каналах коммуникации',
+    'services.ai_development.feature1': 'Настройка и обучение на ваших данных (сайт, FAQ, документы, соцсети)',
+    'services.ai_development.feature2': 'Возможность брендировать ассистента под фирменный стиль компании',
+    'services.ai_development.feature3': 'Обучение на нескольких языках: узбекский, русский, английский, арабский и др.',
+    'services.ai_development.feature4': 'Круглосуточная поддержка клиентов без выходных',
+    'services.ai_development.feature5': 'Обработка тысяч запросов одновременно',
+    'services.ai_development.feature6': 'Аналитика качества ответов и обратной связи',
+    'services.order_service': 'Заказать услугу',
+    
+    // Integration Service
+    'services.integration.title': 'Интеграция с каналами общения',
+    'services.integration.description': 'Подключаем ваших AI-ассистентов ко всем популярным платформам и внутренним системам компании',
+    'services.integration.feature1': 'Telegram, WhatsApp, Instagram Direct',
+    'services.integration.feature2': 'Внедрение на сайт компании и в клиентские порталы',
+    'services.integration.feature3': 'Интеграция с корпоративными CRM и чатами',
+    'services.integration.feature4': 'Синхронизация с системами учета и планирования',
+    'services.integration.feature5': 'API для подключения к любым внешним сервисам',
+    'services.integration.feature6': 'Единая панель управления всеми каналами',
+    
+    // Analytics Service
+    'services.analytics.title': 'Аналитика и оптимизация',
+    'services.analytics.description': 'Комплексный анализ работы ассистентов с рекомендациями по улучшению и постоянным развитием',
+    'services.analytics.feature1': 'Отслеживание пользовательских запросов и поведения',
+    'services.analytics.feature2': 'Анализ эффективности ответов и удовлетворенности клиентов',
+    'services.analytics.feature3': 'Постоянное улучшение знаний ассистента',
+    'services.analytics.feature4': 'Детальная статистика по каналам и темам',
+    'services.analytics.feature5': 'Прогнозирование нагрузки и планирование ресурсов',
+    'services.analytics.feature6': 'Автоматические отчеты для руководства',
+    
+    // Support Service
+    'services.support.title': 'Поддержка и сопровождение',
+    'services.support.description': 'Полное техническое сопровождение и развитие ваших AI-решений',
+    'services.support.feature1': 'Круглосуточная техническая поддержка',
+    'services.support.feature2': 'Индивидуальные консультации по оптимизации',
+    'services.support.feature3': 'Регулярное обновление и масштабирование решений',
+    'services.support.feature4': 'Обучение персонала работе с системой',
+    'services.support.feature5': 'Резервное копирование и восстановление данных',
+    'services.support.feature6': 'Мониторинг производительности 24/7',
+    'services.get_support': 'Получить поддержку',
+    
+    // Benefits section
+    'services.benefits.instant.title': 'Мгновенное развертывание',
+    'services.benefits.instant.description': 'Запускаем ваш AI-офис за 24 часа. Никаких долгих настроек, сложных интеграций или технических барьеров. Просто быстрый результат.',
+    'services.benefits.multilang.title': 'Многоязычная поддержка',
+    'services.benefits.multilang.description': 'Ваш ИИ-сотрудник говорит на 10+ языках, включая узбекский, русский, английский, арабский и другие региональные языки.',
+    'services.benefits.security.title': 'Безопасность данных',
+    'services.benefits.security.description': 'Полное соответствие требованиям местного законодательства. Данные хранятся в Узбекистане с соблюдением всех норм конфиденциальности.',
+    'services.benefits.efficiency.title': 'Доказанная эффективность',
+    'services.benefits.efficiency.description': 'Наши клиенты фиксируют рост производительности на 40-60% уже в первый месяц работы с AI-ассистентом.',
+    'services.benefits.simplicity.title': 'Простота использования',
+    'services.benefits.simplicity.description': 'Интуитивная платформа без необходимости в программировании. Любой сотрудник освоит систему за несколько минут.',
+    'services.benefits.nonstop.title': 'Работа без перерывов',
+    'services.benefits.nonstop.description': 'Ваш ИИ-сотрудник работает 24/7/365, обрабатывая тысячи запросов одновременно без усталости и выходных.',
     
     // Pricing plans
     'pricing.plans.lite.name': 'Lite',
