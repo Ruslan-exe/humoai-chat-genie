@@ -8,42 +8,42 @@ const About = () => {
 
   const values = [
     {
-      icon: Brain,
-      title: t('about.values.innovation.title') || 'Технологические инновации',
-      description: t('about.values.innovation.desc') || 'Используем самые современные модели ИИ: GPT-4, Claude, LLaMA. Постоянно изучаем новые технологии и внедряем их в наши решения для максимальной эффективности.'
-    },
-    {
-      icon: Users,
-      title: t('about.values.team.title') || 'Экспертная команда',
-      description: t('about.values.team.desc') || 'Наша команда состоит из опытных разработчиков, data scientists и ML-инженеров с опытом работы в ведущих технологических компаниях.'
-    },
-    {
-      icon: Target,
-      title: t('about.values.results.title') || 'Фокус на результат',
-      description: t('about.values.results.desc') || 'Мы не просто создаем ИИ-решения, мы решаем реальные бизнес-задачи. Наши клиенты видят измеримые результаты уже через месяц работы.'
-    },
-    {
-      icon: Award,
-      title: t('about.values.quality.title') || 'Качество и надежность',
-      description: t('about.values.quality.desc') || 'Все наши решения проходят тщательное тестирование. Гарантируем стабильную работу 24/7 с уровнем доступности 99.9%.'
+      icon: Zap,
+      title: 'Развертывание за 1 день',
+      description: 'Запускаем вашего AI-ассистента за 24 часа. Никаких длительных настроек и сложных технических процедур — просто быстрый результат.'
     },
     {
       icon: Globe,
-      title: t('about.values.global.title') || 'Глобальное мышление',
-      description: t('about.values.global.desc') || 'Работаем с клиентами по всему миру, понимаем специфику разных рынков и адаптируем решения под локальные особенности.'
+      title: 'Поддержка 10+ языков',
+      description: 'Включая региональные языки: узбекский, таджикский, казахский, киргизский, туркменский, а также русский, английский и арабский.'
     },
     {
-      icon: Zap,
-      title: t('about.values.speed.title') || 'Быстрое внедрение',
-      description: t('about.values.speed.desc') || 'От идеи до запуска - всего 2-4 недели. Используем agile-методологии и готовые компоненты для ускорения разработки.'
+      icon: Award,
+      title: 'Локальное законодательство',
+      description: 'Хранение данных в соответствии с требованиями Узбекистана и других стран региона. Полное соблюдение законов о персональных данных.'
+    },
+    {
+      icon: Target,
+      title: 'Рост эффективности на 40–60%',
+      description: 'Наши клиенты видят значительное улучшение клиентского сервиса и сокращение времени обработки запросов уже в первый месяц.'
+    },
+    {
+      icon: Brain,
+      title: 'Простой запуск без программирования',
+      description: 'Интуитивно понятная платформа, которая не требует технических знаний. Любой сотрудник сможет настроить и управлять AI-ассистентом.'
+    },
+    {
+      icon: Users,
+      title: 'Персонализация под бренд',
+      description: 'Каждый ассистент обучается на ваших данных и говорит языком вашей компании, отражая корпоративные ценности и стиль общения.'
     }
   ];
 
   const stats = [
-    { number: '500+', label: t('about.stats.clients') || 'Довольных клиентов' },
-    { number: '98%', label: t('about.stats.satisfaction') || 'Удовлетворенность клиентов' },
-    { number: '50M+', label: t('about.stats.messages') || 'Сообщений обработано' },
-    { number: '99.9%', label: t('about.stats.uptime') || 'Время работы' }
+    { number: '24 ч', label: 'Время развертывания' },
+    { number: '10+', label: 'Поддерживаемых языков' },
+    { number: '40-60%', label: 'Рост эффективности' },
+    { number: '99.9%', label: 'Время работы' }
   ];
 
   return (
@@ -61,7 +61,7 @@ const About = () => {
               </span>
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              {t('about.subtitle') || 'HumoAI - ведущая компания в области разработки ИИ-решений для бизнеса. Мы помогаем компаниям автоматизировать процессы и улучшить клиентский сервис с помощью искусственного интеллекта.'}
+              HumoAI — интеллектуальная AI-платформа нового поколения, созданная, чтобы трансформировать клиентскую поддержку и цифровое взаимодействие между бизнесом и клиентами. Мы помогаем компаниям быстро запускать собственного умного ассистента, который работает 24/7 и говорит на языке вашего бизнеса — буквально.
             </p>
           </div>
         </div>
@@ -76,11 +76,39 @@ const About = () => {
                 {t('about.mission.title') || 'Наша миссия'}
               </h2>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                {t('about.mission.text') || 'HumoAI основана в 2021 году с простой, но амбициозной целью: сделать мощные технологии искусственного интеллекта доступными для бизнеса любого размера.'}
+                Наша миссия — демократизировать доступ к искусственному интеллекту для малого и среднего бизнеса в Узбекистане, Центральной Азии и странах Ближнего Востока. Мы верим, что качественная клиентская поддержка не должна быть роскошью, а технология — сложной.
               </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Мы понимаем, что каждый бизнес уникален, поэтому создаем персонализированные ИИ-решения, которые идеально интегрируются в существующие процессы и помогают достигать конкретных целей - от автоматизации клиентского сервиса до оптимизации внутренних операций.
+              <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+                HumoAI обучается на ваших данных — сайте, документах, соцсетях, базе знаний — и превращает их в персонализированного ассистента, который готов отвечать на вопросы клиентов в Telegram, WhatsApp, на сайте и в корпоративных чатах.
               </p>
+              <div className="mb-6">
+                <h3 className="text-xl font-semibold text-foreground mb-4">Мы предлагаем:</h3>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <Zap className="w-5 h-5 text-primary" />
+                    Быстрое развертывание (до 24 часов)
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Users className="w-5 h-5 text-primary" />
+                    Интуитивно понятную платформу
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Globe className="w-5 h-5 text-primary" />
+                    Локализацию под региональные языки
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Award className="w-5 h-5 text-primary" />
+                    Соответствие требованиям локального законодательства
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Target className="w-5 h-5 text-primary" />
+                    Простую и честную подписную модель оплаты
+                  </li>
+                </ul>
+                <p className="text-lg text-muted-foreground mt-4 font-medium">
+                  С нами ваш бизнес станет доступнее, быстрее и ближе к клиенту.
+                </p>
+              </div>
               <div className="grid grid-cols-2 gap-6">
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center">
@@ -104,10 +132,10 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-foreground">
-              {t('about.values.title') || 'Наши ценности'}
+              Почему выбирают HumoAI
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t('about.values.subtitle') || 'Принципы, которыми мы руководствуемся в работе'}
+              Ключевые преимущества нашей платформы
             </p>
           </div>
           
