@@ -217,10 +217,10 @@ const Chat = () => {
                 </div>
                 <div>
                   <h1 className="text-xl font-semibold">
-                    ИИ-специалист HumoAI
+                    {t('chat.specialist_name')}
                   </h1>
                   <p className="text-sm text-muted-foreground">
-                    Онлайн • Готов помочь 24/7
+                    {t('chat.status')}
                   </p>
                 </div>
               </div>
@@ -233,7 +233,7 @@ const Chat = () => {
                 </DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
-                    <DialogTitle>Настройки ИИ-специалиста</DialogTitle>
+                    <DialogTitle>{t('chat.settings')}</DialogTitle>
                   </DialogHeader>
                   <div className="space-y-4">
                     <div>
@@ -316,7 +316,7 @@ const Chat = () => {
                   <div className="bg-card p-3 rounded-xl shadow-card">
                     <div className="flex items-center gap-2">
                       <Loader2 className="w-4 h-4 animate-spin text-primary" />
-                      <span className="text-sm text-muted-foreground">Печатает...</span>
+                      <span className="text-sm text-muted-foreground">{t('chat.typing')}</span>
                     </div>
                   </div>
                 </div>
@@ -331,7 +331,7 @@ const Chat = () => {
                 <Input
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
-                  placeholder="Напишите ваш вопрос..."
+                  placeholder={t('chat.placeholder')}
                   className="flex-1"
                   disabled={isLoading}
                 />

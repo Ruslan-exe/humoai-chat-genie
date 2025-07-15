@@ -29,22 +29,22 @@ export const FeaturesSection = () => {
     },
     {
       icon: Shield,
-      title: 'Безопасность',
-      description: 'Защищенное хранение данных и соответствие стандартам',
+      title: t('features.security.title'),
+      description: t('features.security.desc'),
       color: 'text-blue-500',
       bgColor: 'bg-blue-500/10',
     },
     {
       icon: Globe,
-      title: 'Многоязычность',
-      description: 'Поддержка узбекского, русского и английского языков',
+      title: t('features.multilang.title'),
+      description: t('features.multilang.desc'),
       color: 'text-indigo-500',
       bgColor: 'bg-indigo-500/10',
     },
     {
       icon: BarChart,
-      title: 'Аналитика',
-      description: 'Подробная статистика и отчеты по работе',
+      title: t('features.analytics.title'),
+      description: t('features.analytics.desc'),
       color: 'text-red-500',
       bgColor: 'bg-red-500/10',
     },
@@ -58,7 +58,7 @@ export const FeaturesSection = () => {
             {t('features.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Современные технологии искусственного интеллекта для развития вашего бизнеса
+            {t('features.subtitle') || 'Современные технологии искусственного интеллекта для развития вашего бизнеса'}
           </p>
         </div>
 

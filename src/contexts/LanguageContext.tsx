@@ -109,12 +109,68 @@ const translations = {
     
     // Features
     'features.title': 'Почему выбирают HumoAI',
+    'features.subtitle': 'Современные технологии искусственного интеллекта для развития вашего бизнеса',
     'features.fast.title': 'Быстрое внедрение',
     'features.fast.desc': 'Готовый к работе ИИ-специалист за 1 минуту',
     'features.smart.title': 'Умная обработка',
     'features.smart.desc': 'Автоматическое изучение вашего бизнеса',
     'features.support.title': '24/7 Поддержка',
     'features.support.desc': 'Круглосуточная работа без выходных',
+    'features.security.title': 'Безопасность',
+    'features.security.desc': 'Защищенное хранение данных и соответствие стандартам',
+    'features.multilang.title': 'Многоязычность',
+    'features.multilang.desc': 'Поддержка узбекского, русского и английского языков',
+    'features.analytics.title': 'Аналитика',
+    'features.analytics.desc': 'Подробная статистика и отчеты по работе',
+    
+    // About page content
+    'about.description': 'HumoAI — интеллектуальная AI-платформа нового поколения, созданная, чтобы трансформировать клиентскую поддержку и цифровое взаимодействие между бизнесом и клиентами. Мы помогаем компаниям быстро запускать собственного умного ассистента, который работает 24/7 и говорит на языке вашего бизнеса — буквально.',
+    'about.mission.description1': 'Наша миссия — демократизировать доступ к искусственному интеллекту для малого и среднего бизнеса в Узбекистане, Центральной Азии и странах Ближнего Востока. Мы верим, что качественная клиентская поддержка не должна быть роскошью, а технология — сложной.',
+    'about.mission.description2': 'HumoAI обучается на ваших данных — сайте, документах, соцсетях, базе знаний — и превращает их в персонализированного ассистента, который готов отвечать на вопросы клиентов в Telegram, WhatsApp, на сайте и в корпоративных чатах.',
+    'about.mission.offers': 'Мы предлагаем:',
+    'about.mission.offer1': 'Быстрое развертывание (до 24 часов)',
+    'about.mission.offer2': 'Интуитивно понятную платформу',
+    'about.mission.offer3': 'Локализацию под региональные языки',
+    'about.mission.offer4': 'Соответствие требованиям локального законодательства',
+    'about.mission.offer5': 'Простую и честную подписную модель оплаты',
+    'about.mission.conclusion': 'С нами ваш бизнес станет доступнее, быстрее и ближе к клиенту.',
+    'about.why_choose': 'Почему выбирают HumoAI',
+    'about.why_choose.subtitle': 'Ключевые преимущества нашей платформы',
+    
+    // Services page content  
+    'services.description': 'Мы предлагаем комплекс решений для автоматизации клиентской поддержки и цифровых коммуникаций с помощью искусственного интеллекта. Превратите свой бизнес в умную компанию будущего.',
+    
+    // Pricing plans
+    'pricing.plans.lite.name': 'Lite',
+    'pricing.plans.lite.period': '/мес',
+    'pricing.plans.lite.description': 'Идеально для малого бизнеса и стартапов',
+    'pricing.plans.basic.name': 'Basic',
+    'pricing.plans.basic.period': '/мес',
+    'pricing.plans.basic.description': 'Оптимальное решение для растущего бизнеса',
+    'pricing.plans.individual.name': 'Individual',
+    'pricing.plans.individual.price': 'По запросу',
+    'pricing.plans.individual.description': 'Корпоративные решения под ключ',
+    
+    // FAQ questions
+    'pricing.faq.q1': 'Можно ли изменить тариф?',
+    'pricing.faq.a1': 'Да, вы можете повысить или понизить тариф в любое время. При повышении тарифа изменения вступают в силу немедленно, при понижении - со следующего платежного периода. Мы вернем разницу пропорционально.',
+    'pricing.faq.q2': 'Есть ли бесплатный период?',
+    'pricing.faq.a2': 'Да, мы предоставляем 14-дневный бесплатный пробный период для всех тарифов. Никаких обязательств - вы можете отменить в любое время без списания средств.',
+    'pricing.faq.q3': 'Что включает поддержка?',
+    'pricing.faq.a3': 'Поддержка включает помощь в настройке ИИ-специалистов, обучение вашей команды, техническую поддержку, консультации по оптимизации и регулярные обновления системы.',
+    'pricing.faq.q4': 'Безопасны ли мои данные?',
+    'pricing.faq.a4': 'Абсолютно. Мы используем шифрование AES-256, соблюдаем стандарты ISO 27001, GDPR и локальное законодательство по защите данных. Ваши данные хранятся на серверах в Узбекистане.',
+    'pricing.faq.q5': 'Сколько времени занимает внедрение?',
+    'pricing.faq.a5': 'Базовое внедрение занимает 24 часа. Полная настройка под ваши процессы - от 3 до 7 дней в зависимости от сложности. Мы предоставляем поэтапный план внедрения.',
+    'pricing.faq.q6': 'Можно ли интегрироваться с нашими системами?',
+    'pricing.faq.a6': 'Да, мы поддерживаем интеграцию с популярными CRM, ERP системами, мессенджерами и можем создать кастомные интеграции через API для любых систем.',
+    
+    // Chat page
+    'chat.specialist_name': 'ИИ-специалист HumoAI',
+    'chat.status': 'Онлайн • Готов помочь 24/7',
+    'chat.settings': 'Настройки ИИ-специалиста',
+    'chat.placeholder': 'Напишите ваш вопрос...',
+    'chat.typing': 'Печатает...',
   },
   
   uz: {
@@ -215,12 +271,68 @@ const translations = {
     
     // Features
     'features.title': 'Nega HumoAI ni tanlashadi',
+    'features.subtitle': 'Biznesingizni rivojlantirish uchun zamonaviy sun\'iy intellekt texnologiyalari',
     'features.fast.title': 'Tez joriy etish',
     'features.fast.desc': '1 daqiqada ishga tayyor AI mutaxassis',
     'features.smart.title': 'Aqlli qayta ishlash',
     'features.smart.desc': 'Biznesingizni avtomatik o\'rganish',
     'features.support.title': '24/7 Qo\'llab-quvvatlash',
     'features.support.desc': 'Dam olish kunlarisiz 24 soat ishlash',
+    'features.security.title': 'Xavfsizlik',
+    'features.security.desc': 'Ma\'lumotlarni himoyalangan saqlash va standartlarga muvofiqlik',
+    'features.multilang.title': 'Ko\'p tillilik',
+    'features.multilang.desc': 'O\'zbek, rus va ingliz tillarini qo\'llab-quvvatlash',
+    'features.analytics.title': 'Analitika',
+    'features.analytics.desc': 'Ish bo\'yicha batafsil statistika va hisobotlar',
+    
+    // About page content
+    'about.description': 'HumoAI — mijozlarni qo\'llab-quvvatlash va biznes hamda mijozlar o\'rtasidagi raqamli o\'zaro aloqani o\'zgartirish uchun yaratilgan yangi avlod intellektual AI platformasi. Biz kompaniyalarga o\'zlarining aqlli yordamchisini tezda ishga tushirishda yordam beramiz, u 24/7 ishlaydi va sizning biznes tilingizda gaplashadi — tom ma\'noda.',
+    'about.mission.description1': 'Bizning missiyamiz — O\'zbekiston, Markaziy Osiyo va Yaqin Sharq mamlakatlaridagi kichik va o\'rta biznes uchun sun\'iy intellektga kirishni demokratlashtirish. Biz sifatli mijozlarni qo\'llab-quvvatlash hashamat bo\'lmasligi va texnologiya murakkab bo\'lmasligi kerakligiga ishonamiz.',
+    'about.mission.description2': 'HumoAI sizning ma\'lumotlaringizdan — sayt, hujjatlar, ijtimoiy tarmoqlar, bilimlar bazasi — o\'rganadi va ularni shaxsiylashtirilgan yordamchiga aylantiradi, u Telegram, WhatsApp, sayt va korporativ chatlarda mijozlar savollariga javob berishga tayyor.',
+    'about.mission.offers': 'Biz taklif qilamiz:',
+    'about.mission.offer1': 'Tez joylashtirish (24 soatigacha)',
+    'about.mission.offer2': 'Tushunarli platforma',
+    'about.mission.offer3': 'Mintaqaviy tillarga moslashtirish',
+    'about.mission.offer4': 'Mahalliy qonunchilik talablariga muvofiqlik',
+    'about.mission.offer5': 'Oddiy va halol obuna to\'lov modeli',
+    'about.mission.conclusion': 'Biz bilan sizning biznesingiz qulayroq, tezroq va mijozga yaqinroq bo\'ladi.',
+    'about.why_choose': 'Nega HumoAI ni tanlashadi',
+    'about.why_choose.subtitle': 'Bizning platformamizning asosiy afzalliklari',
+    
+    // Services page content
+    'services.description': 'Biz sun\'iy intellekt yordamida mijozlarni qo\'llab-quvvatlash va raqamli aloqani avtomatlashtirish uchun kompleks yechimlar taklif qilamiz. Biznesingizni kelajakning aqlli kompaniyasiga aylantiring.',
+    
+    // Pricing plans
+    'pricing.plans.lite.name': 'Lite',
+    'pricing.plans.lite.period': '/oy',
+    'pricing.plans.lite.description': 'Kichik biznes va startaplar uchun ideal',
+    'pricing.plans.basic.name': 'Basic',
+    'pricing.plans.basic.period': '/oy',
+    'pricing.plans.basic.description': 'O\'sib borayotgan biznes uchun optimal yechim',
+    'pricing.plans.individual.name': 'Individual',
+    'pricing.plans.individual.price': 'So\'rov bo\'yicha',
+    'pricing.plans.individual.description': 'Kalitni qo\'lga olish korporativ yechimlari',
+    
+    // FAQ questions  
+    'pricing.faq.q1': 'Tarifni o\'zgartirish mumkinmi?',
+    'pricing.faq.a1': 'Ha, siz istalgan vaqtda tarifni oshirish yoki kamaytirish mumkin. Tarifni oshirishda o\'zgarishlar darhol kuchga kiradi, kamaytirishda esa keyingi to\'lov davridan. Biz farqni proporsional ravishda qaytaramiz.',
+    'pricing.faq.q2': 'Bepul davr mavjudmi?',
+    'pricing.faq.a2': 'Ha, biz barcha tariflar uchun 14 kunlik bepul sinov davrini taqdim etamiz. Hech qanday majburiyat yo\'q - siz istalgan vaqtda to\'lovni to\'xtatishingiz mumkin.',
+    'pricing.faq.q3': 'Qo\'llab-quvvatlash nimani o\'z ichiga oladi?',
+    'pricing.faq.a3': 'Qo\'llab-quvvatlash AI mutaxassislarini sozlashda yordam, jamoangizni o\'qitish, texnik yordam, optimallash bo\'yicha maslahatlar va tizimni muntazam yangilashni o\'z ichiga oladi.',
+    'pricing.faq.q4': 'Mening ma\'lumotlarim xavfsiizmi?',
+    'pricing.faq.a4': 'Mutlaqo. Biz AES-256 shifrlashdan foydalanamiz, ISO 27001, GDPR standartlariga va ma\'lumotlarni himoya qilish bo\'yicha mahalliy qonunchilikka rioya qilamiz. Sizning ma\'lumotlaringiz O\'zbekistondagi serverlarda saqlanadi.',
+    'pricing.faq.q5': 'Joriy etish qancha vaqt oladi?',
+    'pricing.faq.a5': 'Asosiy joriy etish 24 soat davom etadi. Jarayonlaringizga to\'liq sozlash murakkablikka qarab 3 dan 7 kungacha. Biz bosqichma-bosqich joriy etish rejasini taqdim etamiz.',
+    'pricing.faq.q6': 'Bizning tizimlarimiz bilan integratsiya qilish mumkinmi?',
+    'pricing.faq.a6': 'Ha, biz mashhur CRM, ERP tizimlari, messenjerlar bilan integratsiyani qo\'llab-quvvatlaymiz va har qanday tizimlar uchun API orqali maxsus integratsiyalar yarata olamiz.',
+    
+    // Chat page
+    'chat.specialist_name': 'HumoAI AI mutaxassisi',
+    'chat.status': 'Onlayn • 24/7 yordam berishga tayyor',
+    'chat.settings': 'AI mutaxassis sozlamalari',
+    'chat.placeholder': 'Savolingizni yozing...',
+    'chat.typing': 'Yozmoqda...',
   },
   
   en: {
@@ -327,18 +439,83 @@ const translations = {
     'features.smart.desc': 'Automatic learning of your business',
     'features.support.title': '24/7 Support',
     'features.support.desc': 'Round-the-clock operation without weekends',
+    'features.security.title': 'Security',
+    'features.security.desc': 'Secure data storage and compliance with standards',
+    'features.multilang.title': 'Multilingual',
+    'features.multilang.desc': 'Support for Uzbek, Russian and English languages',
+    'features.analytics.title': 'Analytics',
+    'features.analytics.desc': 'Detailed statistics and reports on work',
+    
+    // About page content
+    'about.description': 'HumoAI is a next-generation intelligent AI platform created to transform customer support and digital interaction between business and customers. We help companies quickly launch their own smart assistant that works 24/7 and speaks the language of your business — literally.',
+    'about.mission.description1': 'Our mission is to democratize access to artificial intelligence for small and medium businesses in Uzbekistan, Central Asia and Middle Eastern countries. We believe that quality customer support should not be a luxury, and technology should not be complex.',
+    'about.mission.description2': 'HumoAI learns from your data — website, documents, social networks, knowledge base — and turns them into a personalized assistant that is ready to answer customer questions in Telegram, WhatsApp, on the website and in corporate chats.',
+    'about.mission.offers': 'We offer:',
+    'about.mission.offer1': 'Fast deployment (up to 24 hours)',
+    'about.mission.offer2': 'Intuitive platform',
+    'about.mission.offer3': 'Localization for regional languages',
+    'about.mission.offer4': 'Compliance with local legislation requirements',
+    'about.mission.offer5': 'Simple and honest subscription payment model',
+    'about.mission.conclusion': 'With us, your business will become more accessible, faster and closer to the customer.',
+    'about.why_choose': 'Why Choose HumoAI',
+    'about.why_choose.subtitle': 'Key advantages of our platform',
+    
+    // Services page content
+    'services.description': 'We offer a complex of solutions for automating customer support and digital communications using artificial intelligence. Turn your business into a smart company of the future.',
+    
+    // Pricing plans
+    'pricing.plans.lite.name': 'Lite',
+    'pricing.plans.lite.period': '/month',
+    'pricing.plans.lite.description': 'Perfect for small business and startups',
+    'pricing.plans.basic.name': 'Basic',
+    'pricing.plans.basic.period': '/month',
+    'pricing.plans.basic.description': 'Optimal solution for growing business',
+    'pricing.plans.individual.name': 'Individual',
+    'pricing.plans.individual.price': 'By request',
+    'pricing.plans.individual.description': 'Turnkey corporate solutions',
+    
+    // FAQ questions
+    'pricing.faq.q1': 'Can I change the plan?',
+    'pricing.faq.a1': 'Yes, you can upgrade or downgrade the plan at any time. When upgrading, changes take effect immediately, when downgrading - from the next billing period. We will refund the difference proportionally.',
+    'pricing.faq.q2': 'Is there a free period?',
+    'pricing.faq.a2': 'Yes, we provide a 14-day free trial period for all plans. No obligations - you can cancel at any time without charge.',
+    'pricing.faq.q3': 'What does support include?',
+    'pricing.faq.a3': 'Support includes help with AI specialist setup, training your team, technical support, optimization consultations and regular system updates.',
+    'pricing.faq.q4': 'Is my data safe?',
+    'pricing.faq.a4': 'Absolutely. We use AES-256 encryption, comply with ISO 27001, GDPR standards and local data protection legislation. Your data is stored on servers in Uzbekistan.',
+    'pricing.faq.q5': 'How long does implementation take?',
+    'pricing.faq.a5': 'Basic implementation takes 24 hours. Full customization for your processes takes 3 to 7 days depending on complexity. We provide a phased implementation plan.',
+    'pricing.faq.q6': 'Can it integrate with our systems?',
+    'pricing.faq.a6': 'Yes, we support integration with popular CRM, ERP systems, messengers and can create custom integrations via API for any systems.',
+    
+    // Chat page
+    'chat.specialist_name': 'HumoAI AI Specialist',
+    'chat.status': 'Online • Ready to help 24/7',
+    'chat.settings': 'AI specialist settings',
+    'chat.placeholder': 'Write your question...',
+    'chat.typing': 'Typing...',
   },
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('ru');
+  // Загружаем сохраненный язык из localStorage или используем русский по умолчанию
+  const [language, setLanguage] = useState<Language>(() => {
+    const savedLanguage = localStorage.getItem('selectedLanguage') as Language;
+    return savedLanguage && ['ru', 'uz', 'en'].includes(savedLanguage) ? savedLanguage : 'ru';
+  });
+
+  // Сохраняем язык в localStorage при изменении
+  const handleSetLanguage = (lang: Language) => {
+    setLanguage(lang);
+    localStorage.setItem('selectedLanguage', lang);
+  };
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations[typeof language]] || key;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

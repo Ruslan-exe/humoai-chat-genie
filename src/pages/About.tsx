@@ -61,7 +61,7 @@ const About = () => {
               </span>
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              HumoAI — интеллектуальная AI-платформа нового поколения, созданная, чтобы трансформировать клиентскую поддержку и цифровое взаимодействие между бизнесом и клиентами. Мы помогаем компаниям быстро запускать собственного умного ассистента, который работает 24/7 и говорит на языке вашего бизнеса — буквально.
+              {t('about.description')}
             </p>
           </div>
         </div>
@@ -76,37 +76,37 @@ const About = () => {
                 {t('about.mission')}
               </h2>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                Наша миссия — демократизировать доступ к искусственному интеллекту для малого и среднего бизнеса в Узбекистане, Центральной Азии и странах Ближнего Востока. Мы верим, что качественная клиентская поддержка не должна быть роскошью, а технология — сложной.
+                {t('about.mission.description1')}
               </p>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                HumoAI обучается на ваших данных — сайте, документах, соцсетях, базе знаний — и превращает их в персонализированного ассистента, который готов отвечать на вопросы клиентов в Telegram, WhatsApp, на сайте и в корпоративных чатах.
+                {t('about.mission.description2')}
               </p>
               <div className="mb-6">
-                <h3 className="text-xl font-semibold text-foreground mb-4">Мы предлагаем:</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-4">{t('about.mission.offers')}</h3>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-center gap-2">
                     <Zap className="w-5 h-5 text-primary" />
-                    Быстрое развертывание (до 24 часов)
+                    {t('about.mission.offer1')}
                   </li>
                   <li className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-primary" />
-                    Интуитивно понятную платформу
+                    {t('about.mission.offer2')}
                   </li>
                   <li className="flex items-center gap-2">
                     <Globe className="w-5 h-5 text-primary" />
-                    Локализацию под региональные языки
+                    {t('about.mission.offer3')}
                   </li>
                   <li className="flex items-center gap-2">
                     <Award className="w-5 h-5 text-primary" />
-                    Соответствие требованиям локального законодательства
+                    {t('about.mission.offer4')}
                   </li>
                   <li className="flex items-center gap-2">
                     <Target className="w-5 h-5 text-primary" />
-                    Простую и честную подписную модель оплаты
+                    {t('about.mission.offer5')}
                   </li>
                 </ul>
                 <p className="text-lg text-muted-foreground mt-4 font-medium">
-                  С нами ваш бизнес станет доступнее, быстрее и ближе к клиенту.
+                  {t('about.mission.conclusion')}
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-6">
@@ -132,10 +132,10 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-foreground">
-              Почему выбирают HumoAI
+              {t('about.why_choose')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Ключевые преимущества нашей платформы
+              {t('about.why_choose.subtitle')}
             </p>
           </div>
           
