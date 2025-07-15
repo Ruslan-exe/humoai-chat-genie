@@ -22,39 +22,45 @@ const Services = () => {
   const services = [
     {
       icon: MessageSquare,
-      title: t('services.chat.title') || 'ИИ Чат-боты',
-      description: t('services.chat.desc') || 'Умные чат-боты для автоматизации клиентского сервиса',
+      title: t('services.chat.title') || 'Умные ИИ-ассистенты',
+      description: t('services.chat.desc') || 'Персональные ИИ-специалисты для вашего бизнеса, обученные на ваших данных и готовые отвечать клиентам 24/7',
       features: [
-        t('services.chat.feature1') || '24/7 поддержка клиентов',
-        t('services.chat.feature2') || 'Обработка до 1000 запросов одновременно',
-        t('services.chat.feature3') || 'Интеграция с любыми системами',
-        t('services.chat.feature4') || 'Обучение на ваших данных'
+        t('services.chat.feature1') || 'Круглосуточная поддержка клиентов без выходных',
+        t('services.chat.feature2') || 'Обработка тысяч запросов одновременно',
+        t('services.chat.feature3') || 'Интеграция с CRM, ERP и другими системами',
+        t('services.chat.feature4') || 'Обучение на документах и базе знаний компании',
+        t('services.chat.feature5') || 'Поддержка 50+ языков',
+        t('services.chat.feature6') || 'Аналитика разговоров и качества ответов'
       ],
       color: 'text-blue-500',
       bgColor: 'bg-blue-500/10'
     },
     {
       icon: Bot,
-      title: t('services.automation.title') || 'Автоматизация процессов',
-      description: t('services.automation.desc') || 'ИИ-решения для автоматизации бизнес-процессов',
+      title: t('services.automation.title') || 'Автоматизация бизнес-процессов',
+      description: t('services.automation.desc') || 'Комплексные ИИ-решения для автоматизации рутинных задач и оптимизации рабочих процессов',
       features: [
-        t('services.automation.feature1') || 'Обработка документов',
-        t('services.automation.feature2') || 'Анализ данных',
-        t('services.automation.feature3') || 'Автоматические отчеты',
-        t('services.automation.feature4') || 'Интеллектуальная маршрутизация'
+        t('services.automation.feature1') || 'Автоматическая обработка и анализ документов',
+        t('services.automation.feature2') || 'Интеллектуальная классификация и сортировка данных',
+        t('services.automation.feature3') || 'Генерация отчетов и аналитических сводок',
+        t('services.automation.feature4') || 'Умная маршрутизация задач между сотрудниками',
+        t('services.automation.feature5') || 'Автоматизация email-рассылок и уведомлений',
+        t('services.automation.feature6') || 'Интеграция с существующими IT-системами'
       ],
       color: 'text-green-500',
       bgColor: 'bg-green-500/10'
     },
     {
       icon: BarChart3,
-      title: t('services.analytics.title') || 'ИИ Аналитика',
-      description: t('services.analytics.desc') || 'Продвинутая аналитика и прогнозирование',
+      title: t('services.analytics.title') || 'ИИ-аналитика и прогнозирование',
+      description: t('services.analytics.desc') || 'Продвинутая аналитика с использованием машинного обучения для принятия стратегических решений',
       features: [
-        t('services.analytics.feature1') || 'Прогнозирование трендов',
-        t('services.analytics.feature2') || 'Анализ клиентского поведения',
-        t('services.analytics.feature3') || 'Персонализированные рекомендации',
-        t('services.analytics.feature4') || 'Визуализация данных'
+        t('services.analytics.feature1') || 'Прогнозирование продаж и трендов рынка',
+        t('services.analytics.feature2') || 'Анализ поведения клиентов и сегментация',
+        t('services.analytics.feature3') || 'Персонализированные рекомендации товаров',
+        t('services.analytics.feature4') || 'Интерактивные дашборды и визуализация',
+        t('services.analytics.feature5') || 'Анализ рисков и выявление аномалий',
+        t('services.analytics.feature6') || 'Оптимизация цен и маркетинговых кампаний'
       ],
       color: 'text-purple-500',
       bgColor: 'bg-purple-500/10'
@@ -64,23 +70,23 @@ const Services = () => {
   const benefits = [
     {
       icon: Zap,
-      title: t('services.benefits.efficiency') || 'Повышение эффективности',
-      description: t('services.benefits.efficiency.desc') || 'Автоматизация до 70% рутинных задач'
+      title: t('services.benefits.efficiency') || 'Повышение эффективности на 70%',
+      description: t('services.benefits.efficiency.desc') || 'Автоматизируем рутинные задачи, освобождая время сотрудников для стратегической работы'
     },
     {
       icon: Clock,
-      title: t('services.benefits.time') || 'Экономия времени',
-      description: t('services.benefits.time.desc') || 'Сокращение времени обработки запросов в 10 раз'
+      title: t('services.benefits.time') || 'Мгновенные ответы клиентам',
+      description: t('services.benefits.time.desc') || 'Среднее время ответа сокращается с часов до секунд благодаря ИИ-ассистентам'
     },
     {
       icon: Users,
-      title: t('services.benefits.satisfaction') || 'Удовлетворенность клиентов',
-      description: t('services.benefits.satisfaction.desc') || 'Улучшение клиентского опыта на 95%'
+      title: t('services.benefits.satisfaction') || 'Счастливые клиенты',
+      description: t('services.benefits.satisfaction.desc') || '98% клиентов довольны качеством обслуживания наших ИИ-ассистентов'
     },
     {
       icon: Shield,
-      title: t('services.benefits.reliability') || 'Надежность',
-      description: t('services.benefits.reliability.desc') || 'Работа 24/7 без перерывов и ошибок'
+      title: t('services.benefits.reliability') || 'Безупречная надежность',
+      description: t('services.benefits.reliability.desc') || 'Гарантированная работа 24/7 с уровнем доступности 99.9% и защитой данных'
     }
   ];
 
@@ -99,7 +105,7 @@ const Services = () => {
               </span>
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              {t('services.subtitle') || 'Полный спектр ИИ-решений для вашего бизнеса. От простых чат-ботов до сложных систем автоматизации.'}
+              {t('services.subtitle') || 'Превратите свой бизнес в умную компанию будущего. Наши ИИ-решения автоматизируют процессы, улучшают клиентский сервис и повышают прибыльность.'}
             </p>
           </div>
         </div>
