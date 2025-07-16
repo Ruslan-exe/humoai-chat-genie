@@ -35,22 +35,8 @@ const Chat = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [apiKey, setApiKey] = useState('');
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [companyContext, setCompanyContext] = useState(`
-    Компания: HumoAI
-    Описание: Компания разрабатывает ИИ-специалистов чат поддержки для бизнеса в Узбекистане
-    Услуги: 
-    - Создание персональных ИИ-специалистов за 1 минуту
-    - 24/7 поддержка клиентов
-    - Интеграция с существующими системами
-    - Многоязычная поддержка (русский, узбекский, английский)
-    - Аналитика и отчетность
-    
-    Преимущества:
-    - Увеличение конверсии в 2 раза
-    - Экономия до 70% затрат на поддержку
-    - Быстрое внедрение за 30 секунд
-    - Круглосуточная работа без выходных
-  `);
+  const [companyContext, setCompanyContext] = useState('');
+  const [conversationHistory, setConversationHistory] = useState<{role: string, content: string}[]>([]);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -75,28 +61,28 @@ const Chat = () => {
     }
   }, []);
 
-  // Загружаем данные компании из формы найма
+  // Загружаем полные данные компании включая содержимое файла
   useEffect(() => {
     const savedCompanyData = localStorage.getItem('companyData');
     if (savedCompanyData) {
       try {
         const companyData = JSON.parse(savedCompanyData);
-        const customContext = `
+        const fullContext = `
           Информация о компании: ${companyData.companyInfo}
           ${companyData.website ? `Веб-сайт: ${companyData.website}` : ''}
           ${companyData.file ? `Загруженный файл: ${companyData.file.name}` : ''}
+          ${companyData.fileContent ? `Содержимое файла: ${companyData.fileContent}` : ''}
           
-          Дополнительные услуги HumoAI:
-          - Создание персональных ИИ-специалистов за 1 минуту
-          - 24/7 поддержка клиентов
-          - Интеграция с существующими системами
-          - Многоязычная поддержка (русский, узбекский, английский)
-          - Аналитика и отчетность
+          ВАЖНО: Используйте ТОЛЬКО информацию выше для ответов на вопросы клиентов.
+          Не используйте общие знания о других компаниях.
         `;
-        setCompanyContext(customContext);
+        setCompanyContext(fullContext);
       } catch (error) {
         console.error('Error parsing company data:', error);
+        setCompanyContext('Информация о компании не найдена. Пожалуйста, вернитесь на страницу найма и заполните форму.');
       }
+    } else {
+      setCompanyContext('Информация о компании не найдена. Пожалуйста, вернитесь на страницу найма и заполните форму.');
     }
   }, []);
 
@@ -131,10 +117,23 @@ const Chat = () => {
 
     try {
       const systemPrompt = language === 'ru'
-        ? `Ты профессиональный ИИ-специалист службы поддержки клиентов. Отвечай дружелюбно, профессионально и по существу на основе информации о компании. Используй следующую информацию: ${companyContext}. Отвечай только на русском языке. Если клиент спрашивает о чем-то не связанном с компанией, вежливо перенаправь разговор на услуги компании.`
+        ? `Ты профессиональный ИИ-специалист службы поддержки клиентов. Отвечай только на русском языке. ВАЖНО: Используй ТОЛЬКО следующую информацию о компании для ответов: ${companyContext}. НЕ используй общие знания о других компаниях или услугах. Отвечай строго на основе предоставленной информации. Если клиент спрашивает о чем-то не связанном с компанией, вежливо перенаправь разговор на услуги компании.`
         : language === 'uz'
-        ? `Siz professional mijozlarni qo'llab-quvvatlash bo'yicha AI mutaxassisiz. Do'stona, professional va aniq javob bering. Quyidagi kompaniya ma'lumotlaridan foydalaning: ${companyContext}. Faqat o'zbek tilida javob bering. Agar mijoz kompaniya bilan bog'liq bo'lmagan narsa haqida so'rasa, muloyimlik bilan suhbatni kompaniya xizmatlariga yo'naltiring.`
-        : `You are a professional AI customer support specialist. Respond in a friendly, professional and relevant manner based on company information. Use the following information: ${companyContext}. Respond only in English. If the customer asks about something not related to the company, politely redirect the conversation to the company's services.`;
+        ? `Siz professional mijozlarni qo'llab-quvvatlash bo'yicha AI mutaxassisiz. Faqat o'zbek tilida javob bering. MUHIM: Faqat quyidagi kompaniya ma'lumotlaridan foydalaning: ${companyContext}. Boshqa kompaniyalar yoki xizmatlar haqidagi umumiy bilimlardan foydalanmang. Faqat taqdim etilgan ma'lumotlar asosida javob bering. Agar mijoz kompaniya bilan bog'liq bo'lmagan narsa haqida so'rasa, muloyimlik bilan suhbatni kompaniya xizmatlariga yo'naltiring.`
+        : `You are a professional AI customer support specialist. Respond only in English. IMPORTANT: Use ONLY the following company information for responses: ${companyContext}. Do NOT use general knowledge about other companies or services. Respond strictly based on the provided information. If the customer asks about something not related to the company, politely redirect the conversation to the company's services.`;
+
+      // Формируем полную историю разговора для контекста
+      const fullConversationHistory = [
+        {
+          role: 'system',
+          content: systemPrompt
+        },
+        ...conversationHistory,
+        {
+          role: 'user',
+          content: userMessage
+        }
+      ];
 
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
@@ -144,16 +143,7 @@ const Chat = () => {
         },
         body: JSON.stringify({
           model: 'gpt-4o-mini',
-          messages: [
-            {
-              role: 'system',
-              content: systemPrompt
-            },
-            {
-              role: 'user',
-              content: userMessage
-            }
-          ],
+          messages: fullConversationHistory,
           temperature: 0.7,
           max_tokens: 500,
         }),
@@ -164,13 +154,21 @@ const Chat = () => {
       }
 
       const data = await response.json();
-      const noResponseFallback = language === 'uz' 
-        ? 'Kechirasiz, javob olishning iloji bo\'lmadi. Iltimos, yana urinib ko\'ring.' 
-        : language === 'en'
-        ? 'Sorry, failed to get a response. Please try again.'
-        : 'Извините, не удалось получить ответ. Попробуйте еще раз.';
+      const aiResponse = data.choices[0]?.message?.content || 
+        (language === 'uz' 
+          ? 'Kechirasiz, javob olishning iloji bo\'lmadi. Iltimos, yana urinib ko\'ring.' 
+          : language === 'en'
+          ? 'Sorry, failed to get a response. Please try again.'
+          : 'Извините, не удалось получить ответ. Попробуйте еще раз.');
       
-      return data.choices[0]?.message?.content || noResponseFallback;
+      // Обновляем историю разговора
+      setConversationHistory(prev => [
+        ...prev,
+        { role: 'user', content: userMessage },
+        { role: 'assistant', content: aiResponse }
+      ]);
+      
+      return aiResponse;
     } catch (error) {
       console.error('Error calling ChatGPT API:', error);
       

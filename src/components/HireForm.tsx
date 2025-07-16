@@ -16,6 +16,7 @@ export const HireForm = () => {
     website: '',
     file: null as File | null,
   });
+  const [fileContent, setFileContent] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
   const [isTesting, setIsTesting] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
@@ -47,8 +48,12 @@ export const HireForm = () => {
     setIsProcessing(false);
     setIsTesting(true);
     
-    // Store company data for the AI
-    localStorage.setItem('companyData', JSON.stringify(formData));
+    // Store company data for the AI including file content
+    const fullCompanyData = {
+      ...formData,
+      fileContent: fileContent
+    };
+    localStorage.setItem('companyData', JSON.stringify(fullCompanyData));
     
     toast({
       title: "ИИ-специалист создан!",
@@ -60,6 +65,13 @@ export const HireForm = () => {
     const file = e.target.files?.[0];
     if (file) {
       setFormData(prev => ({ ...prev, file }));
+      // Читаем содержимое файла
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const content = e.target?.result as string;
+        setFileContent(content);
+      };
+      reader.readAsText(file);
     }
   };
 
@@ -72,14 +84,16 @@ export const HireForm = () => {
     setIsTestLoading(true);
     
     try {
-      // Создаем контекст компании из данных формы
+      // Создаем полный контекст компании из данных формы и файла
       const companyContext = `
         Информация о компании: ${formData.companyInfo}
         ${formData.website ? `Веб-сайт: ${formData.website}` : ''}
         ${formData.file ? `Загруженный файл: ${formData.file.name}` : ''}
+        ${fileContent ? `Содержимое файла: ${fileContent}` : ''}
         
-        Вы профессиональный ИИ-специалист службы поддержки клиентов этой компании.
-        Отвечайте дружелюбно, профессионально и по существу на основе информации о компании.
+        ВАЖНО: Используйте ТОЛЬКО информацию выше для ответов на вопросы клиентов.
+        Не используйте общие знания о других компаниях.
+        Отвечайте дружелюбно, профессионально и по существу ТОЛЬКО на основе предоставленной информации о компании.
         Если клиент спрашивает о чем-то не связанном с компанией, вежливо перенаправьте разговор на услуги компании.
       `;
 
@@ -115,7 +129,7 @@ export const HireForm = () => {
         'en': 'Reply only in English.'
       };
 
-      const systemPrompt = `Ты профессиональный ИИ-специалист службы поддержки клиентов. Отвечай дружелюбно, профессионально и по существу на основе информации о компании. Используй следующую информацию: ${companyContext}. ${languageInstructions[language]}. Если клиент спрашивает о чем-то не связанном с компанией, вежливо перенаправь разговор на услуги компании.`;
+      const systemPrompt = `Ты профессиональный ИИ-специалист службы поддержки клиентов. ${languageInstructions[language]} ВАЖНО: Используй ТОЛЬКО следующую информацию о компании для ответов: ${companyContext}. НЕ используй общие знания о других компаниях или услугах. Отвечай строго на основе предоставленной информации. Если клиент спрашивает о чем-то не связанном с компанией, вежливо перенаправь разговор на услуги компании.`;
 
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
