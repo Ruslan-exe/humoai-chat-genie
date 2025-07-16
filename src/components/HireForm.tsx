@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -21,6 +21,21 @@ export const HireForm = () => {
   const [isComplete, setIsComplete] = useState(false);
   const [testMessages, setTestMessages] = useState<{role: 'user' | 'assistant', content: string}[]>([]);
   const [testInput, setTestInput] = useState('');
+  const [isTestLoading, setIsTestLoading] = useState(false);
+  const [apiKey, setApiKey] = useState('');
+
+  // Устанавливаем API ключ при монтировании компонента
+  useEffect(() => {
+    const savedApiKey = localStorage.getItem('chatgpt_api_key');
+    if (savedApiKey) {
+      setApiKey(savedApiKey);
+    } else {
+      // Используем предоставленный API ключ
+      const providedKey = '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';
+      setApiKey(providedKey);
+      localStorage.setItem('chatgpt_api_key', providedKey);
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,14 +69,74 @@ export const HireForm = () => {
     const userMessage = testInput;
     setTestMessages(prev => [...prev, { role: 'user', content: userMessage }]);
     setTestInput('');
+    setIsTestLoading(true);
     
-    // Simulate AI response based on company data
-    const companyInfo = formData.companyInfo || 'HumoAI';
-    const aiResponse = `Привет! Я ИИ-специалист компании ${companyInfo.split(' ')[0] || 'вашей компании'}. Я изучил всю информацию о компании и готов отвечать на вопросы клиентов. Ваш вопрос: "${userMessage}" - это отличный вопрос! Я готов предоставить подробную информацию на основе загруженных данных о компании.`;
-    
-    setTimeout(() => {
+    try {
+      // Создаем контекст компании из данных формы
+      const companyContext = `
+        Информация о компании: ${formData.companyInfo}
+        ${formData.website ? `Веб-сайт: ${formData.website}` : ''}
+        ${formData.file ? `Загруженный файл: ${formData.file.name}` : ''}
+        
+        Вы профессиональный ИИ-специалист службы поддержки клиентов этой компании.
+      `;
+
+      if (!apiKey) {
+        const fallbackResponse = `Спасибо за ваш вопрос: "${userMessage}". Я ИИ-специалист компании ${formData.companyInfo.split(' ')[0] || 'вашей компании'}. Для полноценной работы требуется настройка API ключа, но я готов помочь с базовой информацией о наших услугах!`;
+        setTimeout(() => {
+          setTestMessages(prev => [...prev, { role: 'assistant', content: fallbackResponse }]);
+          setIsTestLoading(false);
+        }, 1000);
+        return;
+      }
+
+      const systemPrompt = `Ты профессиональный ИИ-специалист службы поддержки клиентов. Отвечай дружелюбно, профессионально и по существу на основе информации о компании. Используй следующую информацию: ${companyContext}. Отвечай только на русском языке. Если клиент спрашивает о чем-то не связанном с компанией, вежливо перенаправь разговор на услуги компании.`;
+
+      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: 'gpt-4o-mini',
+          messages: [
+            {
+              role: 'system',
+              content: systemPrompt
+            },
+            {
+              role: 'user',
+              content: userMessage
+            }
+          ],
+          temperature: 0.7,
+          max_tokens: 500,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`API request failed: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const aiResponse = data.choices[0]?.message?.content || 'Извините, не удалось получить ответ. Попробуйте еще раз.';
+      
       setTestMessages(prev => [...prev, { role: 'assistant', content: aiResponse }]);
-    }, 1000);
+    } catch (error) {
+      console.error('Error calling ChatGPT API:', error);
+      toast({
+        title: "Ошибка API",
+        description: "Не удалось получить ответ от ИИ-специалиста. Проверьте API ключ.",
+        variant: "destructive",
+      });
+      
+      // Fallback response
+      const fallbackResponse = `Извините, временно не могу обработать ваш запрос. Но я могу сказать, что наша компания "${formData.companyInfo.split(' ')[0] || 'ваша компания'}" предоставляет качественные услуги и готова помочь вам!`;
+      setTestMessages(prev => [...prev, { role: 'assistant', content: fallbackResponse }]);
+    } finally {
+      setIsTestLoading(false);
+    }
   };
 
   const handleStartUsing = () => {
@@ -134,37 +209,49 @@ export const HireForm = () => {
                         </div>
                       )}
                       
-                      {testMessages.map((message, index) => (
-                        <div
-                          key={index}
-                          className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
-                        >
-                          <div
-                            className={`max-w-[80%] p-3 rounded-lg ${
-                              message.role === 'user'
-                                ? 'bg-primary text-primary-foreground'
-                                : 'bg-muted'
-                            }`}
-                          >
-                            {message.content}
-                          </div>
-                        </div>
-                      ))}
+                       {testMessages.map((message, index) => (
+                         <div
+                           key={index}
+                           className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                         >
+                           <div
+                             className={`max-w-[80%] p-3 rounded-lg ${
+                               message.role === 'user'
+                                 ? 'bg-primary text-primary-foreground'
+                                 : 'bg-muted'
+                             }`}
+                           >
+                             {message.content}
+                           </div>
+                         </div>
+                       ))}
+                       
+                       {isTestLoading && (
+                         <div className="flex justify-start">
+                           <div className="bg-muted p-3 rounded-lg">
+                             <div className="flex items-center gap-2">
+                               <Loader2 className="w-4 h-4 animate-spin text-primary" />
+                               <span className="text-sm text-muted-foreground">ИИ думает...</span>
+                             </div>
+                           </div>
+                         </div>
+                       )}
                     </div>
                     
                     {/* Input */}
                     <div className="border-t p-4">
                       <div className="flex gap-2">
-                        <Input
-                          value={testInput}
-                          onChange={(e) => setTestInput(e.target.value)}
-                          placeholder="Напишите вопрос клиента..."
-                          onKeyPress={(e) => e.key === 'Enter' && handleTestMessage()}
-                          className="flex-1"
-                        />
-                        <Button onClick={handleTestMessage} size="icon">
-                          <Send className="w-4 h-4" />
-                        </Button>
+                         <Input
+                           value={testInput}
+                           onChange={(e) => setTestInput(e.target.value)}
+                           placeholder="Напишите вопрос клиента..."
+                           onKeyPress={(e) => e.key === 'Enter' && !isTestLoading && handleTestMessage()}
+                           className="flex-1"
+                           disabled={isTestLoading}
+                         />
+                         <Button onClick={handleTestMessage} size="icon" disabled={isTestLoading}>
+                           <Send className="w-4 h-4" />
+                         </Button>
                       </div>
                     </div>
                   </CardContent>
