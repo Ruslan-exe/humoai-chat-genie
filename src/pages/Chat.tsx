@@ -102,9 +102,22 @@ const Chat = () => {
 
   const generateAIResponse = async (userMessage: string) => {
     if (!apiKey) {
+      const apiKeyToastMessages = {
+        title: {
+          'ru': 'Необходим API ключ',
+          'uz': 'API kaliti kerak',
+          'en': 'API Key Required'
+        },
+        description: {
+          'ru': 'Пожалуйста, добавьте ваш ChatGPT API ключ в настройках для работы ИИ-специалиста',
+          'uz': 'Iltimos, AI mutaxassisining ishlashi uchun sozlamalarga ChatGPT API kalitingizni qo\'shing',
+          'en': 'Please add your ChatGPT API key in settings for AI specialist to work'
+        }
+      };
+      
       toast({
-        title: "Необходим API ключ",
-        description: "Пожалуйста, добавьте ваш ChatGPT API ключ в настройках для работы ИИ-специалиста",
+        title: apiKeyToastMessages.title[language] || apiKeyToastMessages.title['ru'],
+        description: apiKeyToastMessages.description[language] || apiKeyToastMessages.description['ru'],
         variant: "destructive",
       });
       
@@ -151,12 +164,32 @@ const Chat = () => {
       }
 
       const data = await response.json();
-      return data.choices[0]?.message?.content || 'Извините, не удалось получить ответ. Попробуйте еще раз.';
+      const noResponseFallback = language === 'uz' 
+        ? 'Kechirasiz, javob olishning iloji bo\'lmadi. Iltimos, yana urinib ko\'ring.' 
+        : language === 'en'
+        ? 'Sorry, failed to get a response. Please try again.'
+        : 'Извините, не удалось получить ответ. Попробуйте еще раз.';
+      
+      return data.choices[0]?.message?.content || noResponseFallback;
     } catch (error) {
       console.error('Error calling ChatGPT API:', error);
+      
+      const toastMessages = {
+        title: {
+          'ru': 'Ошибка API',
+          'uz': 'API xatosi',
+          'en': 'API Error'
+        },
+        description: {
+          'ru': 'Не удалось получить ответ от ИИ-специалиста. Проверьте API ключ.',
+          'uz': 'AI mutaxassisdan javob olishning iloji bo\'lmadi. API kalitini tekshiring.',
+          'en': 'Failed to get response from AI specialist. Check API key.'
+        }
+      };
+      
       toast({
-        title: "Ошибка API",
-        description: "Не удалось получить ответ от ИИ-специалиста. Проверьте API ключ.",
+        title: toastMessages.title[language] || toastMessages.title['ru'],
+        description: toastMessages.description[language] || toastMessages.description['ru'],
         variant: "destructive",
       });
       
@@ -246,21 +279,41 @@ const Chat = () => {
                         onChange={(e) => setApiKey(e.target.value)}
                       />
                       <p className="text-xs text-muted-foreground mt-2">
-                        Получите ключ на <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">platform.openai.com</a>
+                        {language === 'uz' 
+                          ? 'Kalitni olish uchun '
+                          : language === 'en'
+                          ? 'Get your key at '
+                          : 'Получите ключ на '
+                        }
+                        <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">platform.openai.com</a>
                       </p>
                     </div>
                     <Button 
                       onClick={() => {
                         localStorage.setItem('chatgpt_api_key', apiKey);
                         setIsSettingsOpen(false);
+                        
+                        const settingsToastMessages = {
+                          title: {
+                            'ru': 'Настройки сохранены',
+                            'uz': 'Sozlamalar saqlandi',
+                            'en': 'Settings saved'
+                          },
+                          description: {
+                            'ru': 'API ключ успешно сохранен',
+                            'uz': 'API kaliti muvaffaqiyatli saqlandi',
+                            'en': 'API key saved successfully'
+                          }
+                        };
+                        
                         toast({
-                          title: "Настройки сохранены",
-                          description: "API ключ успешно сохранен",
+                          title: settingsToastMessages.title[language] || settingsToastMessages.title['ru'],
+                          description: settingsToastMessages.description[language] || settingsToastMessages.description['ru'],
                         });
                       }}
                       className="w-full"
                     >
-                      Сохранить
+                      {language === 'uz' ? 'Saqlash' : language === 'en' ? 'Save' : 'Сохранить'}
                     </Button>
                   </div>
                 </DialogContent>

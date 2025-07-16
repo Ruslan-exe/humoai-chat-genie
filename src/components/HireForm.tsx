@@ -9,7 +9,7 @@ import { Upload, Link as LinkIcon, Loader2, CheckCircle, FileText, Globe, Messag
 import { useToast } from '@/hooks/use-toast';
 
 export const HireForm = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     companyInfo: '',
@@ -84,7 +84,12 @@ export const HireForm = () => {
       `;
 
       if (!apiKey) {
-        const fallbackResponse = `Спасибо за ваш вопрос: "${userMessage}". Я ИИ-специалист компании ${formData.companyInfo.split(' ')[0] || 'вашей компании'}. Для полноценной работы требуется настройка API ключа, но я готов помочь с базовой информацией о наших услугах!`;
+        const fallbackMessages = {
+          'ru': `Спасибо за ваш вопрос: "${userMessage}". Я ИИ-специалист компании ${formData.companyInfo.split(' ')[0] || 'вашей компании'}. Для полноценной работы требуется настройка API ключа, но я готов помочь с базовой информацией о наших услугах!`,
+          'uz': `Savolingiz uchun rahmat: "${userMessage}". Men ${formData.companyInfo.split(' ')[0] || 'kompaniyangiz'} II mutaxassisiman. To'liq ishlash uchun API kalit sozlash kerak, ammo men bizning xizmatlar haqida asosiy ma'lumotlar berish uchun tayyorman!`,
+          'en': `Thank you for your question: "${userMessage}". I'm an AI specialist of ${formData.companyInfo.split(' ')[0] || 'your company'}. For full functionality, API key setup is required, but I'm ready to help with basic information about our services!`
+        };
+        const fallbackResponse = fallbackMessages[language] || fallbackMessages['ru'];
         setTimeout(() => {
           setTestMessages(prev => [...prev, { role: 'assistant', content: fallbackResponse }]);
           setIsTestLoading(false);
@@ -104,7 +109,13 @@ export const HireForm = () => {
         content: userMessage
       });
 
-      const systemPrompt = `Ты профессиональный ИИ-специалист службы поддержки клиентов. Отвечай дружелюбно, профессионально и по существу на основе информации о компании. Используй следующую информацию: ${companyContext}. Отвечай только на русском языке. Если клиент спрашивает о чем-то не связанном с компанией, вежливо перенаправь разговор на услуги компании.`;
+      const languageInstructions = {
+        'ru': 'Отвечай только на русском языке.',
+        'uz': 'Faqat o\'zbek tilida javob bering.',
+        'en': 'Reply only in English.'
+      };
+
+      const systemPrompt = `Ты профессиональный ИИ-специалист службы поддержки клиентов. Отвечай дружелюбно, профессионально и по существу на основе информации о компании. Используй следующую информацию: ${companyContext}. ${languageInstructions[language]}. Если клиент спрашивает о чем-то не связанном с компанией, вежливо перенаправь разговор на услуги компании.`;
 
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
@@ -145,7 +156,12 @@ export const HireForm = () => {
       });
       
       // Fallback response
-      const fallbackResponse = `Извините, временно не могу обработать ваш запрос. Но я могу сказать, что наша компания "${formData.companyInfo.split(' ')[0] || 'ваша компания'}" предоставляет качественные услуги и готова помочь вам!`;
+      const errorFallbackMessages = {
+        'ru': `Извините, временно не могу обработать ваш запрос. Но я могу сказать, что наша компания "${formData.companyInfo.split(' ')[0] || 'ваша компания'}" предоставляет качественные услуги и готова помочь вам!`,
+        'uz': `Kechirasiz, vaqtinchalik so'rovingizni qayta ishlay olmayman. Lekin bizning "${formData.companyInfo.split(' ')[0] || 'kompaniyangiz'}" kompaniyasi sifatli xizmatlar taqdim etadi va sizga yordam berishga tayyorligimizni aytishim mumkin!`,
+        'en': `Sorry, I can't process your request temporarily. But I can say that our company "${formData.companyInfo.split(' ')[0] || 'your company'}" provides quality services and is ready to help you!`
+      };
+      const fallbackResponse = errorFallbackMessages[language] || errorFallbackMessages['ru'];
       setTestMessages(prev => [...prev, { role: 'assistant', content: fallbackResponse }]);
     } finally {
       setIsTestLoading(false);
@@ -218,7 +234,11 @@ export const HireForm = () => {
                       {testMessages.length === 0 && (
                         <div className="text-center text-muted-foreground py-8">
                           <MessageCircle className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                          <p>Задайте любой вопрос, чтобы протестировать ИИ-специалиста</p>
+                          <p>
+                            {language === 'uz' ? 'II mutaxassisini sinovdan oʻtkazish uchun istalgan savolni bering' :
+                             language === 'en' ? 'Ask any question to test the AI specialist' :
+                             'Задайте любой вопрос, чтобы протестировать ИИ-специалиста'}
+                          </p>
                         </div>
                       )}
                       
