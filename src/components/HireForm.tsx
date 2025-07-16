@@ -79,6 +79,8 @@ export const HireForm = () => {
         ${formData.file ? `Загруженный файл: ${formData.file.name}` : ''}
         
         Вы профессиональный ИИ-специалист службы поддержки клиентов этой компании.
+        Отвечайте дружелюбно, профессионально и по существу на основе информации о компании.
+        Если клиент спрашивает о чем-то не связанном с компанией, вежливо перенаправьте разговор на услуги компании.
       `;
 
       if (!apiKey) {
@@ -89,6 +91,18 @@ export const HireForm = () => {
         }, 1000);
         return;
       }
+
+      // Формируем историю сообщений для OpenAI
+      const conversationHistory = testMessages.map(msg => ({
+        role: msg.role === 'user' ? 'user' : 'assistant',
+        content: msg.content
+      }));
+
+      // Добавляем текущее сообщение пользователя
+      conversationHistory.push({
+        role: 'user',
+        content: userMessage
+      });
 
       const systemPrompt = `Ты профессиональный ИИ-специалист службы поддержки клиентов. Отвечай дружелюбно, профессионально и по существу на основе информации о компании. Используй следующую информацию: ${companyContext}. Отвечай только на русском языке. Если клиент спрашивает о чем-то не связанном с компанией, вежливо перенаправь разговор на услуги компании.`;
 
@@ -105,10 +119,7 @@ export const HireForm = () => {
               role: 'system',
               content: systemPrompt
             },
-            {
-              role: 'user',
-              content: userMessage
-            }
+            ...conversationHistory
           ],
           temperature: 0.7,
           max_tokens: 500,
@@ -116,6 +127,8 @@ export const HireForm = () => {
       });
 
       if (!response.ok) {
+        const errorText = await response.text();
+        console.error('OpenAI API Error:', response.status, errorText);
         throw new Error(`API request failed: ${response.status}`);
       }
 
