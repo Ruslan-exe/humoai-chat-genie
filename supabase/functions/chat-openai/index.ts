@@ -14,6 +14,13 @@ serve(async (req) => {
   }
 
   try {
+    console.log('OpenAI API Key exists:', !!openAIApiKey);
+    console.log('API Key first 10 chars:', openAIApiKey?.substring(0, 10));
+    
+    if (!openAIApiKey) {
+      throw new Error('OpenAI API key not found in environment variables');
+    }
+    
     const { messages, systemPrompt } = await req.json();
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
