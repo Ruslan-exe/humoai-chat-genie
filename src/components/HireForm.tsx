@@ -126,23 +126,15 @@ export const HireForm = () => {
 
       const systemPrompt = `Ты профессиональный ИИ-специалист службы поддержки клиентов. ${languageInstructions[language]} ВАЖНО: Используй ТОЛЬКО следующую информацию о компании для ответов: ${companyContext}. НЕ используй общие знания о других компаниях или услугах. Отвечай строго на основе предоставленной информации. Если клиент спрашивает о чем-то не связанном с компанией, вежливо перенаправь разговор на услуги компании.`;
 
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      const response = await fetch('https://gfpvjugmzmhglkkgbelk.supabase.co/functions/v1/chat-openai', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${apiKey}`,
           'Content-Type': 'application/json',
+          'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdmcHZqdWdtem1oZ2xra2diZWxrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI4Mjc5MzYsImV4cCI6MjA2ODQwMzkzNn0.wGNa66swZiCz2R92wk3CA36qsFaMQjcZ1zpyj7tkTd4`,
         },
         body: JSON.stringify({
-          model: 'gpt-4o-mini',
-          messages: [
-            {
-              role: 'system',
-              content: systemPrompt
-            },
-            ...conversationHistory
-          ],
-          temperature: 0.7,
-          max_tokens: 500,
+          messages: conversationHistory,
+          systemPrompt,
         }),
       });
 
@@ -153,7 +145,7 @@ export const HireForm = () => {
       }
 
       const data = await response.json();
-      const aiResponse = data.choices[0]?.message?.content || 'Извините, не удалось получить ответ. Попробуйте еще раз.';
+      const aiResponse = data.reply || 'Извините, не удалось получить ответ. Попробуйте еще раз.';
       
       setTestMessages(prev => [...prev, { role: 'assistant', content: aiResponse }]);
     } catch (error) {

@@ -130,17 +130,15 @@ const Chat = () => {
         }
       ];
 
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      const response = await fetch('https://gfpvjugmzmhglkkgbelk.supabase.co/functions/v1/chat-openai', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${apiKey}`,
           'Content-Type': 'application/json',
+          'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdmcHZqdWdtem1oZ2xra2diZWxrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI4Mjc5MzYsImV4cCI6MjA2ODQwMzkzNn0.wGNa66swZiCz2R92wk3CA36qsFaMQjcZ1zpyj7tkTd4`,
         },
         body: JSON.stringify({
-          model: 'gpt-4o-mini',
-          messages: fullConversationHistory,
-          temperature: 0.7,
-          max_tokens: 500,
+          messages: conversationHistory.concat([{ role: 'user', content: userMessage }]),
+          systemPrompt,
         }),
       });
 
@@ -149,7 +147,7 @@ const Chat = () => {
       }
 
       const data = await response.json();
-      const aiResponse = data.choices[0]?.message?.content || 
+      const aiResponse = data.reply || 
         (language === 'uz' 
           ? 'Kechirasiz, javob olishning iloji bo\'lmadi. Iltimos, yana urinib ko\'ring.' 
           : language === 'en'
