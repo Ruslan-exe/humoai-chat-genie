@@ -50,14 +50,9 @@ const Chat = () => {
 
   // Устанавливаем API ключ из localStorage или используем предоставленный
   useEffect(() => {
-    const savedApiKey = localStorage.getItem('chatgpt_api_key');
+    const savedApiKey = localStorage.getItem('openai_api_key') || localStorage.getItem('chatgpt_api_key');
     if (savedApiKey) {
       setApiKey(savedApiKey);
-    } else {
-      // Используем предоставленный API ключ
-      const providedKey = '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';
-      setApiKey(providedKey);
-      localStorage.setItem('chatgpt_api_key', providedKey);
     }
   }, []);
 
@@ -95,9 +90,9 @@ const Chat = () => {
           'en': 'API Key Required'
         },
         description: {
-          'ru': 'Пожалуйста, добавьте ваш ChatGPT API ключ в настройках для работы ИИ-специалиста',
-          'uz': 'Iltimos, AI mutaxassisining ishlashi uchun sozlamalarga ChatGPT API kalitingizni qo\'shing',
-          'en': 'Please add your ChatGPT API key in settings for AI specialist to work'
+          'ru': 'Пожалуйста, добавьте ваш OpenAI API ключ в настройках для работы ИИ-специалиста',
+          'uz': 'Iltimos, AI mutaxassisining ishlashi uchun sozlamalarga OpenAI API kalitingizni qo\'shing',
+          'en': 'Please add your OpenAI API key in settings for AI specialist to work'
         }
       };
       
@@ -107,7 +102,7 @@ const Chat = () => {
         variant: "destructive",
       });
       
-      // Временный ответ без API
+      // Temporary response without API
       return language === 'ru' 
         ? `Спасибо за ваш вопрос: "${userMessage}". Для полноценной работы ИИ-специалиста требуется настройка API ключа. Тем не менее, я готов помочь вам с вопросами о наших услугах ИИ-поддержки!`
         : language === 'uz'
@@ -268,7 +263,7 @@ const Chat = () => {
                   </DialogHeader>
                   <div className="space-y-4">
                     <div>
-                      <Label htmlFor="apiKey">ChatGPT API Key</Label>
+                      <Label htmlFor="apiKey">OpenAI API Key</Label>
                       <Input
                         id="apiKey"
                         type="password"
@@ -288,7 +283,7 @@ const Chat = () => {
                     </div>
                     <Button 
                       onClick={() => {
-                        localStorage.setItem('chatgpt_api_key', apiKey);
+                        localStorage.setItem('openai_api_key', apiKey);
                         setIsSettingsOpen(false);
                         
                         const settingsToastMessages = {

@@ -27,14 +27,9 @@ export const HireForm = () => {
 
   // Устанавливаем API ключ при монтировании компонента
   useEffect(() => {
-    const savedApiKey = localStorage.getItem('chatgpt_api_key');
+    const savedApiKey = localStorage.getItem('openai_api_key') || localStorage.getItem('chatgpt_api_key');
     if (savedApiKey) {
       setApiKey(savedApiKey);
-    } else {
-      // Используем предоставленный API ключ
-      const providedKey = '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';
-      setApiKey(providedKey);
-      localStorage.setItem('chatgpt_api_key', providedKey);
     }
   }, []);
 
